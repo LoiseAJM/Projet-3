@@ -1,19 +1,6 @@
-html, body 
+html, body
 { 
     min-height : 100%; 
-}
-
-body
-{
-    font-family: Helvetica,sans-serif;
-    font-size: small;
-    background: linear-gradient(rgb(216, 216, 216), white);
-
-}
-
-h1
-{
-    font-family: "Roboto",Arial,Verdana,"Lucida Grande",sans-serif;
 }
 header 
 {  
@@ -22,6 +9,24 @@ header
     color: white;
     border-bottom: 1px solid grey;
 }
+body
+{
+    font-family: Helvetica,sans-serif;
+    font-size: small;
+    background: linear-gradient(rgb(216, 216, 216), white);
+
+}
+footer
+{
+    background-color: rgb(7, 7, 7);
+    min-height: 20%;
+}
+
+h1
+{
+    font-family: "Roboto",Arial,Verdana,"Lucida Grande",sans-serif;
+}
+
 
 #contenu 
 {   display : block ;
@@ -42,5 +47,5 @@ header
 #presentation
 {
     padding: 5px;
-    background-color: rgba(255, 255, 255, 0.863)
+    background-color: rgba(255, 255, 255, 0.863);
 }
