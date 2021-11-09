@@ -9,6 +9,7 @@
     </head> 
     <footer>
         <!--Lien vers les mentions légales-->
-        <a href="mentionslegales.html"> Mentions légales 
+        <a href="mentionslegales.php"> Mentions légales </a>
+
     </footer>
 </html>
