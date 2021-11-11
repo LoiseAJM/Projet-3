@@ -1,5 +1,4 @@
 <!--Utilisateur connecté-->
-<!Doctype html>
 <html>
     <head>
         <meta charset="utf-8">
@@ -10,9 +9,10 @@
 
     </head>
     <body>   
+        <!--Appel du header-->
+         <?php require 'header.php'; ?>
         <div id="contenu">
-            <!--Appel du header-->
-            <?php require 'header.php'; ?>
+       
 
             <!--Section présentation -->
             <section id="presentation">
@@ -32,7 +32,8 @@
             <section id="acteurs">Section acteurs </section>
 
             <!--Appel du footer-->
-            <?php require 'footer.php'; ?>
+           
         </div> 
+         <?php require 'footer.php'; ?>
     </body>
 </html>
