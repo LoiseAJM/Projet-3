@@ -11,9 +11,9 @@ header
 }
 body
 {
-    font-family: Helvetica,sans-serif;
-    font-size: small;
-    background: linear-gradient(rgb(216, 216, 216), white);
+    font-family:  Helvetica,sans-serif;
+    font-size: normal;
+    background-image: linear-gradient( #fdfbfb 0%, #ebedee 100%);
 
 }
 footer
@@ -26,7 +26,32 @@ footer
     text-align: center;
     
 }
-
+.container
+{
+    line-height: 200% ;
+    background-color: white;
+    display : inline-block;
+    margin-top: 2%;
+    margin-left: 2%;
+    padding-left: 2%;
+    padding-right: 2%;
+    border-radius: 3px;
+    box-shadow: 0 0 20px black;
+}
+.form_input
+{
+    width: 100%;
+}
+.submit
+{
+    margin-top: 1em;
+    margin-left: auto;
+    margin-right: auto;
+}
+#titrecontact
+{
+   font-family: 'lobster', 'Courier New', Courier, monospace;
+}
 h1
 {
     font-family: "Roboto",Arial,Verdana,"Lucida Grande",sans-serif;
@@ -53,5 +78,10 @@ h1
 #presentation
 {
     padding: 5px;
-    background-color: rgba(255, 255, 255, 0.863);
+    width: 70%;
+}
+#presentation.blocktext
+{
+    margin-left: auto;
+    margin-right: 20%;
 }
