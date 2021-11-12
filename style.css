@@ -1,19 +1,17 @@
 html, body
 { 
     min-height : 100%; 
+
 }
 header 
 {  
-
-    display: flex;
-    color: white;
-    border-bottom: 1px solid grey;
 }
 body
 {
     font-family:  Helvetica,sans-serif;
     font-size: normal;
     background-image: linear-gradient( #fdfbfb 0%, #ebedee 100%);
+    overflow-x: hidden; 
 
 }
 footer
@@ -26,7 +24,7 @@ footer
     text-align: center;
     
 }
-.container
+.formulaire
 {
     line-height: 200% ;
     background-color: white;
@@ -56,7 +54,12 @@ h1
 {
     font-family: "Roboto",Arial,Verdana,"Lucida Grande",sans-serif;
 }
-
+.conteneur
+{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 
 #contenu 
 {   display : block ;

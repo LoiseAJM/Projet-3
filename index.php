@@ -7,7 +7,10 @@
         <link rel="icon" type="image" href="images/favicon-gbaf.png" />
     </head>
     <body>
-        <div class="container">
+    <!--Appel du header-->
+    <?php require 'header.php'; ?>
+        <div class="conteneur">
+        <div class="formulaire">
             <h1 id="titrecontact">
                 Créer un compte
             </h1>
@@ -41,8 +44,10 @@
                     <button class="submit">Envoyer
                     </button>
                 </div>
+        </div>
 
             </form>
         </div>
+        <?php require 'footer.php'; ?>
     </body>
 </html>
