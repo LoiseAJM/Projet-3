@@ -16,13 +16,13 @@
                     </h1>
                     <form>
                         <div>
-                            <label for="Identifiant"> Identifiant :</label>
-                            <input type="text" name="nom" id="nom" placeholder="Votre nom" class="form_input">
+                            <label for="identifiant"> Identifiant :</label>
+                            <input type="text" name="nom" id="nom" placeholder="Votre identifiant" class="form_input">
                         </div>
                         
                         <div>
-                            <label for="prenom">Mot de passe :</label>
-                            <input type="text" name="prenom" id="prenom" placeholder="Votre prénom" class="form_input">
+                            <label for="motdepasseconnexion">Mot de passe :</label>
+                            <input type="password" name="motpdepasseconnexion" id="motdepasseconnexion" placeholder="Votre mot de passe" class="form_input">
                         </div>
 
                         <div>
@@ -32,7 +32,7 @@
                     </form>
                 </div>  
                 <div>
-                <a href="connexion.php"><button type="button">Je n'ai pas de compte</button></a>
+                <a href="connexion.php">Je veux créer un compte</a>
 
                 </div>
             </div>
