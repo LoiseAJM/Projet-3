@@ -56,7 +56,8 @@
 //if(isset($_POST["submit"])) 
 if ($_SERVER["REQUEST_METHOD"] == "POST")
 {
-    echo ('Inscription réalisée avec succès');
+    
+
                     $username=htmlentities(trim($_POST['username']));
                     $nom=htmlentities(($_POST['nom']));
                     $prenom=htmlentities($_POST['prenom']);
@@ -64,23 +65,35 @@ if ($_SERVER["REQUEST_METHOD"] == "POST")
                     $questionsecrete=htmlentities($_POST['questionsecrete']);
                     $reponse=htmlentities($_POST['reponse']);
     
+                    $pdo = new PDO('mysql:host=localhost;dbname=dev', 'dev', 'devpass');
+
+
+                            echo ('post detecté : ');
+                            echo ("<br>");
+                            echo ($username);
+                            echo ("<br>");
+                            echo $nom;
+                            echo ("<br>");
+                            echo $prenom;
+                            echo ("<br>");
+                            echo $username;
+                            echo ("<br>");
+                            echo $password;
+                            echo ("<br>");
+                            echo $questionsecrete;
+                            echo ("<br>");
+                            echo $reponse;
+                            echo ("<br>");
 
 try {
   $conn = new PDO("mysql:host=localhost;dbname=dev;", 'dev', 'devpass');
   //Exception : Mode Erreur de PDO 
   $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-  $sql = "INSERT INTO `account`( `last_name`, `first_name`, `username`, `password`, `question`, `answer`) 
-  VALUES ( :nom, :prenom, :username, :password, :questionsecrete, :reponse )";
+  $sql = "INSERT INTO `account`(`account_id`, `last_name`, `first_name`, `username`, `password`, `question`, `answer`) 
+  VALUES (null, '".$nom."','".$prenom."','".$username."','".$password."','','')";
   // use exec() because no results are returned
-  $statement=$conn->prepare($sql);
-  $statement->bindParam('nom', $nom);
-  $statement->bindParam('prenom', $prenom);
-  $statement->bindParam('password', $password);
-  $statement->bindParam('questionsecrete', $questionsecrete);
-  $statement->bindParam('reponse', $reponse);
-  $statement->bindParam('username', $username);
-  $statement->execute();
-  echo "Inscription réalisée avec succès";
+  $conn->exec($sql);
+  echo "New record created successfully";
 } catch(PDOException $e) {
   echo $sql . "<br>" . $e->getMessage();
 }
@@ -104,6 +117,6 @@ $conn = null;
                 }
   */      ?>
 
-        <?php require 'footer.php'; ?>
+       <?php //require 'footer.php'; ?>
     </body>
 </html>
