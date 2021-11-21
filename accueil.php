@@ -11,6 +11,7 @@
     <body>   
         <!--Appel du header-->
          <?php require 'header.php'; ?>
+         
         <div id="contenu">
        
 

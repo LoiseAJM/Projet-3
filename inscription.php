@@ -55,9 +55,7 @@
 
 //if(isset($_POST["submit"])) 
 if ($_SERVER["REQUEST_METHOD"] == "POST")
-{
-    echo ('Inscription réalisée avec succès');
-                    $username=htmlentities(trim($_POST['username']));
+{                   $username=htmlentities(trim($_POST['username']));
                     $nom=htmlentities(($_POST['nom']));
                     $prenom=htmlentities($_POST['prenom']);
                     $password=htmlentities($_POST['password']);
@@ -66,7 +64,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST")
     
 
 try {
-  $conn = new PDO("mysql:host=localhost;dbname=dev;", 'dev', 'devpass');
+  $conn = new PDO("mysql:host=localhost; dbname=dev;", 'dev', 'devpass');
   //Exception : Mode Erreur de PDO 
   $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
   $sql = "INSERT INTO `account`( `last_name`, `first_name`, `username`, `password`, `question`, `answer`) 
