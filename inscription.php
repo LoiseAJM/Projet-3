@@ -11,7 +11,7 @@
         <?php require 'header.php'; ?>
             <div class="conteneur">
                 <div class="formulaire">
-                    <h1 id="titrecontact">
+                    <h1>
                         Créer un compte
                     </h1>
                     

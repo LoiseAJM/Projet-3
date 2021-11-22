@@ -9,8 +9,8 @@
     <body>
     <!--Appel du header-->
         <?php require 'header.php'; ?>
-            <div class="conteneur1">
-                <div class="formulaire1">
+            <div class="conteneur">
+                <div class="formulaire">
                     <h1 id="connexion">
                         Connexion
                     </h1>
@@ -29,13 +29,13 @@
                             <button class="submit">Envoyer
                             </button>
                         </div>
+                        <a href="connexion.php">Je n'ai pas encore de compte</a>
                     </form>
                 </div>  
-                <div>
-                <a href="connexion.php">Je veux créer un compte</a>
+            <div>
+               
 
-                </div>
-            </div>
+            
         <?php require 'footer.php'; ?>
     </body>
 </html>
