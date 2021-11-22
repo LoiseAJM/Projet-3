@@ -10,6 +10,7 @@
     </head>
            <!--Appel du header-->
            <?php require 'header.php'; ?>
+           <div class="container">
                
                <h1>Mentions légales </h1>
                 <h2>Définitions</h2>
@@ -220,7 +221,7 @@
                  <p>
                 Tout litige en relation avec l’utilisation du site <a href="http://gbaf-p3.com">http://gbaf-p3.com</a> est soumis au droit français. 
                 En dehors des cas où la loi ne le permet pas, il est fait attribution exclusive de juridiction aux tribunaux compétents de Paris</p>
-
+             </div>
             <?php require 'footer.php'; ?>
 
             </html>

@@ -11,8 +11,8 @@
     <body>   
         <!--Appel du header-->
          <?php require 'header.php'; ?>
-         
-        <div id="contenu">
+
+        <div class="container">
        
 
             <!--Section présentation -->

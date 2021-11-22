@@ -9,15 +9,15 @@
     <body>
         <!--Appel du header-->
         <?php require 'header.php'; ?>
-            <div class="conteneur">
+            <div class="container">
                 <div class="formulaire">
-                    <h1>
-                        Créer un compte
-                    </h1>
+                    
                     
                     <!--<form action="/connexion.php" method="post">-->
                     <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>"> 
-
+                        <h1>
+                            Créer un compte
+                        </h1>
                         <div>
                             <label for="nom">Nom : </label>
                             <input type="text" name="nom" placeholder="Votre nom" class="form_input">
@@ -29,7 +29,7 @@
                         </div>
                         <div >
                             <label for="username">Identifiant :</label>
-                            <input type="text" name="username"  placeholder="Username" class="form_input">
+                            <input type="text" name="username"  placeholder="Votre identifiant" class="form_input">
                         </div>
                         <div>
                             <label for="password">Mot de passe :</label>
