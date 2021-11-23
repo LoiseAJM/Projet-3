@@ -1,3 +1,4 @@
+/*Remise à zéro des marges*/
 *{
     margin: 0;
     padding: 0;
@@ -48,6 +49,7 @@ form {
     border: 1px solid #f1f1f1;
     background: #fff;
     box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+    border-radius: 30px;
 }
 
 /* Full-width inputs */
