@@ -30,8 +30,8 @@
                     <div>
                         <input type ="submit" value ="Envoyer"/>
                     </div>
-                    <div class="lien_formulaire"><a href="inscription.php">Je n'ai pas encore de compte</a>
-                    <div class="lien_formulaire"><a href="#">Je n'arrive pas à me connecter</a>
+                    <div class="centered"><a href="inscription.php">Je n'ai pas encore de compte</a>
+                    <div class="centered"><a href="#">Je n'arrive pas à me connecter</a>
                     </div>
                 </form>
             </div> 

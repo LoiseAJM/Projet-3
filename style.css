@@ -49,7 +49,7 @@ form {
     border: 1px solid #f1f1f1;
     background: #fff;
     box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
-    border-radius: 30px;
+    border-radius: 0px;
 }
 
 /* Full-width inputs */
@@ -86,11 +86,16 @@ form h1
     text-align: center;
 }
 
-.lien_formulaire
+.centered
 {
     text-align: center;
     margin-top: 1em;
 }  
+.redbold
+{
+    color: red;
+    font-weight: bold;
+}
 #listeBanque
 {
     display:inline
