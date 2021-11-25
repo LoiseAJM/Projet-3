@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <html>
 <head>
         <meta charset="utf-8">
@@ -23,14 +24,18 @@
        $row = $statement->fetch() ;
     
            if($row['username'] == $identifiant)
-           {
-               require 'accueil_success.php';
-              
+           {   $_SESSION['identifiant'] = $identifiant;
+               require 'header.php';
+               require 'presentationgbaf.php';
+               require 'footer.php';
+
            }else{
+            session_destroy();
             require 'header.php';
             require 'connexion.php' ;
             echo "<div class='centered redbold'>Identifiant et/ou mot de passe incorrects<div>";
             require 'footer.php';
+            
             
            }
     }  

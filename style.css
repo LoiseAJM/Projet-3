@@ -23,7 +23,8 @@ footer {
   }
  header 
 {
-    color: white;
+    color: black;
+
 }
 
 a 
@@ -44,7 +45,7 @@ form {
     margin-left: auto;
     margin-right: auto;
     margin-top: 30px;
-    margin-bottom: 80px;
+    margin-bottom: 30px;
     padding: 30px;
     border: 1px solid #f1f1f1;
     background: #fff;
@@ -89,7 +90,6 @@ form h1
 .centered
 {
     text-align: center;
-    margin-top: 1em;
 }  
 .redbold
 {
@@ -116,3 +116,8 @@ form h1
     margin-left: auto;
     margin-right: 20%;
 }
+.menusuperieur {
+    display: inline-flex;
+    list-style: none;
+    padding: 0;
+  } 

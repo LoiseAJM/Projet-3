@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <html>
 
     <head>
@@ -8,14 +9,18 @@
         <link rel="icon" type="image" href="images/favicon-gbaf.png" />
     </head>
 
-    <body> 
-             <!--Appel du header-->
-            <?php require 'header.php'; ?>
-            <!--Appel de la page de connexion-->
-            <?php require 'connexion.php';?>
-            
-            <!--Appel du footer-->
-            <?php require 'footer.php' ; ?>            
+    <body> <?php if ((isset ($_SESSION['identifiant'] )))
+            { 
+            require 'header.php'; 
+            require 'presentationgbaf.php';
+            require 'footer.php' ;  }
+            else
+            { 
+            require 'header.php'; 
+            require 'connexion.php';
+            require 'footer.php' ;  }
+            ?>
+
         </body>
 
         

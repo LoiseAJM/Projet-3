@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <html>
     <head>
         <meta charset="utf-8">
@@ -61,7 +62,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST")
                     $password=htmlentities($_POST['f_password']);
                     $questionsecrete=htmlentities($_POST['f_questionsecrete']);
                     $reponse=htmlentities($_POST['f_reponse']);
-    
+                    echo ($reponse);
 //try, catch = gestion des erreurs, execution en bloc complet uniquement
 try {
   $conn = new PDO("mysql:host=localhost; dbname=dev;", 'dev', 'devpass');
@@ -78,7 +79,8 @@ try {
   $statement->bindParam('att_reponse', $reponse);
   $statement->bindParam('att_username', $username);
   $statement->execute();
-  echo "Inscription réalisée avec succès";
+    echo "<div class='centered redbold'>Inscription réalisée avec succès, vous pouvez vous connecter.<div>";
+   
 } catch(PDOException $e) {
   echo $sql . "<br>" . $e->getMessage();
 }
@@ -87,6 +89,6 @@ $conn = null;
 }
 ?>
 
-        <?php require 'footer.php'; ?>
+<?php require 'footer.php'; ?>
     </body>
 </html>

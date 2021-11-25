@@ -9,7 +9,7 @@
 
 <div class="formulaire">
     
-    <form method="post" action="<?php echo htmlspecialchars("accueil.php");?>"> 
+    <form method="post" action="<?php echo htmlspecialchars("verification.php");?>"> 
 
             <h1 id="connexion">
                 Connexion
