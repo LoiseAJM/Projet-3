@@ -25,9 +25,9 @@
                 </div>
 
                 <div>
-                    <input type ="submit" value ="Envoyer"/>
+                    <input type ="submit" value ="Envoyer"/><br><br>
                 </div>
-                <div class="centered"><a href="inscription.php">Je n'ai pas encore de compte</a>
+                <div class="centered"><a href="inscription.php">Je n'ai pas encore de compte</a><br><br>
                 <div class="centered"><a href="#">Je n'arrive pas à me connecter</a>
                 </div>
             </form>
