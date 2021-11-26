@@ -9,7 +9,7 @@
         <link rel="icon" type="image" href="images/favicon-gbaf.png" />
     </head>
 
-    <body> <?php if ((isset ($_SESSION['identifiant'] )))
+    <body> <?php if ((isset ($_SESSION['prenomnom'] )))
             { 
             require 'header.php'; 
             require 'presentationgbaf.php';

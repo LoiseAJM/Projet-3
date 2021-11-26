@@ -24,10 +24,12 @@
        $row = $statement->fetch() ;
     
            if($row['username'] == $identifiant)
-           {   $_SESSION['identifiant'] = $identifiant;
+           {  
+                $_SESSION['prenomnom'] = $row['first_name'] . " " .  $row['last_name'] ;
                require 'header.php';
                require 'presentationgbaf.php';
                require 'footer.php';
+              
 
            }else{
             session_destroy();

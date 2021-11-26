@@ -20,13 +20,13 @@ if(session_id() == '') {
     </head>
         <body>
 <div class="menusuperieur">
-  <a href="index.php"> <img id="logoGBAF" src="images/logo_gbaf.png" alt="logo GBAF"/></a>
-  <div><p><?php
-   if (isset ($_SESSION['identifiant'] ))
-   { echo 'Bonjour ' .$_SESSION['identifiant'] ;}
+  <a   href="index.php"> <img id="logoGBAF" src="images/logo_gbaf.png" alt="logo GBAF"/></a>
+  <div class="right_align bottom_align"><p><?php
+   if (isset ($_SESSION['prenomnom'] ))
+   { echo 'Bonjour ' .$_SESSION['prenomnom'] ;}
    else {echo "Bonjour, vous n'êtes pas connecté";} ?></p>
 <p><?php
-   if (isset ($_SESSION['identifiant'] ))
+   if (isset ($_SESSION['prenomnom'] ))
    { echo '<a href="deconnexion.php"> Déconnexion</a>' ;
 } ?> </p></div>
 </div>

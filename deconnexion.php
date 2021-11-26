@@ -1,7 +1,6 @@
 
 <?php session_start(); ?>
-<?php session_destroy();
-?>
+<?php session_destroy();?>
 <html>
 <head>
 <title>Déconnexion</title>
