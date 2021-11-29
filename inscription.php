@@ -86,7 +86,7 @@ if (    ($username != NULL )
         $statement->bindParam('att_reponse', $reponse);
         $statement->bindParam('att_username', $username);
         $statement->execute();
-        echo "<meta http-equiv='refresh' content='0;redirectinscriptionreussie.php'>";
+        echo "<meta http-equiv='refresh' content='0;redirection_inscription_reussie.php'>";
         } 
     catch(PDOException $e) 
         {

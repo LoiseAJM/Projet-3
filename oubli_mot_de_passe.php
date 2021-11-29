@@ -1,0 +1,57 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>GBAF</title>
+        <link rel="stylesheet" href="style.css">
+        <!--Favicon-->
+        <link rel="icon" type="image" href="images/favicon-gbaf.png" />
+    </head>
+    <body>
+        <?php require 'header.php'; ?>
+        <!--Je clos la session ouverte par le header pour en ouvrir une nouvelle où je pourrai stocker la question secrète-->
+        <?php session_destroy(); ?>
+        <form method="post" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']);?>"> 
+            <h1>
+                J'ai oublié mon mot de passe
+            </h1>
+            <div>
+                <label for="f_identifiant"> Identifiant :</label>
+                <input type="text" name="f_identifiant" placeholder="Votre identifiant">
+                <input type="submit" value="Envoyer"/>
+            </div>
+        </form>
+
+        <?php
+    if ($_SERVER["REQUEST_METHOD"] == "POST")
+        {          
+            $identifiant=htmlentities(trim($_POST['f_identifiant']));
+
+            //connexion avec la base de données
+            $conn = new PDO("mysql:host=localhost; dbname=dev;", 'dev', 'devpass');
+            $sql="SELECT * FROM `account` WHERE `username` = :username ;";
+            $statement = $conn->prepare($sql);
+            $statement->bindParam('username', $identifiant);
+            $statement->execute(); 
+            $row = $statement->fetch() ;
+
+            if($row['username'] == $identifiant)
+            {  
+                $questionsecrete = $row['question'];
+                $reponsesecrete = $row['answer'];
+                $motdepasse = $row['password'];
+                session_start();
+                $_SESSION['questionsecrete'] =$questionsecrete;
+                $_SESSION['reponsesecrete'] =$reponsesecrete;
+                $_SESSION['password'] =$motdepasse;
+
+                echo '<meta http-equiv="refresh" content="0;formulaire_question_secrete.php">';
+
+            }else{
+            echo "<div class='centered'>Désolé, cet identifiant n'existe pas. <br>Souhaitez-vous <a href='inscription.php'>créer un compte ?</a> </div>";
+            
+            
+            }
+        } ?>
+        <?php require 'footer.php'; ?>
+    </body>
+</html>

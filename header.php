@@ -1,5 +1,6 @@
 <header>
 <?php
+/*Si aucune session n'est ouverte, on ouvre une session*/
 if(session_id() == '') {
         session_start();
     }
