@@ -22,6 +22,8 @@
        $statement->execute(); 
        $row = $statement->fetch() ;
        $password = $row['password'] ;
+       $nom = $row['last_name'];
+       $prenom = $row['first_name'];
        
            if(empty ($row['username']))
                {
@@ -35,7 +37,7 @@
                {
                if (password_verify($motdepasseconnexion, $password))
                    {
-                    require 'header.php';
+                    $_SESSION['prenomnom'] = $prenom . ' ' . $nom;
                     echo '<meta http-equiv="refresh" content="0;accueil_success.php">' ;
                     
                    }
@@ -54,9 +56,7 @@
     
       
        
-            ?>
-    
-    
-        </div> 
+        ?>
+
     </body>
 </html>
