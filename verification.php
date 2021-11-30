@@ -9,43 +9,54 @@
     </head>    
 <!--Utilisateur connecté-->
     <?php
-    if ($_SERVER["REQUEST_METHOD"] == "POST")
-    {          
-       $identifiant=htmlentities(trim($_POST['f_identifiant']));
-       $motdepasseconnexion=htmlentities(trim($_POST['f_motdepasseconnexion']));
-   
+      {
+        if ($_SERVER["REQUEST_METHOD"] == "POST") 
+       { $identifiant=htmlentities(trim($_POST['f_identifiant']));
+        $motdepasseconnexion=htmlentities(trim($_POST['f_motdepasseconnexion']));
        //connexion avec la base de données
+          //connexion avec la base de données
        $conn = new PDO("mysql:host=localhost; dbname=dev;", 'dev', 'devpass');
-       $sql="SELECT * FROM `account` WHERE `username` = :username and `password` = :password";
+       $sql="SELECT * FROM `account` WHERE `username` = :username";
        $statement = $conn->prepare($sql);
        $statement->bindParam('username', $identifiant);
-       $statement->bindParam('password', $motdepasseconnexion);
        $statement->execute(); 
        $row = $statement->fetch() ;
-    
-           if($row['username'] == $identifiant)
-           {  
-                $_SESSION['prenomnom'] = $row['first_name'] . " " .  $row['last_name'] ;
+       $password = $row['password'] ;
+       
+           if(empty ($row['username']))
+               {
+               session_destroy();
                require 'header.php';
-               require 'presentationgbaf.php';
+               require 'connexion.php' ;
+               echo "<div class='centered redbold'>Identifiant inconnu<div>";
                require 'footer.php';
-              
+               }
+           else 
+               {
+               if (password_verify($motdepasseconnexion, $password))
+                   {
+                    require 'header.php';
+                    echo '<meta http-equiv="refresh" content="0;accueil_success.php">' ;
+                    
+                   }
+                else
+                   {   
+                    require 'header.php';
+                    require 'connexion.php' ;
+                    echo "<div class='centered redbold'>Mot de passe incorrect<div>";
+                    require 'footer.php';
+                   } 
 
-           }else{
-            session_destroy();
-            require 'header.php';
-            require 'connexion.php' ;
-            echo "<div class='centered redbold'>Identifiant et/ou mot de passe incorrects<div>";
-            require 'footer.php';
-            
-            
-           }
-    }  
-   
-        ?>
+                }
 
-            <!--Appel du footer-->
-           
+            }
+        }
+    
+      
+       
+            ?>
+    
+    
         </div> 
     </body>
 </html>
