@@ -8,7 +8,7 @@
     </head>
     <body>
         <?php require 'header.php'; ?>
-        <!--Je clos la session ouverte par le header pour en ouvrir une nouvelle où je pourrai stocker la question secrète-->
+        <!--Clos la session ouverte dans le header-->
         <?php session_destroy(); ?>
         <form method="post" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']);?>"> 
             <h1>
@@ -39,10 +39,12 @@
                 $questionsecrete = $row['question'];
                 $reponsesecrete = $row['answer'];
                 $motdepasse = $row['password'];
-                session_start();
-                $_SESSION['questionsecrete'] =$questionsecrete;
-                $_SESSION['reponsesecrete'] =$reponsesecrete;
-                $_SESSION['password'] =$motdepasse;
+                $account_id= $row['account_id'];
+                session_start(); //nouvelle session pour stocker les infos suivantes
+                $_SESSION['questionsecrete'] =$questionsecrete ;
+                $_SESSION['reponsesecrete'] =$reponsesecrete ;
+                $_SESSION['password'] =$motdepasse ;
+                $_SESSION['account_id']=$account_id ;
 
                 echo '<meta http-equiv="refresh" content="0;formulaire_question_secrete.php">';
 

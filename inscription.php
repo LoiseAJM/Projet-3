@@ -12,47 +12,47 @@
         <?php require 'header.php'; ?>
             <div class="container">
                 
-                    <!--<form action="/connexion.php" method="post">-->
-                    <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>"> 
-                        <h1>
-                            Créer un compte
-                        </h1>
-                        <div>
-                            <label for="f_nom">Nom : </label>
-                            <input type="text" name="f_nom" placeholder="Votre nom">
-                        </div>
-                        
-                        <div>
-                            <label for="f_prenom">Prénom :</label>
-                            <input type="text" name="f_prenom" placeholder="Votre prénom">
-                        </div>
-                        <div >
-                            <label for="f_username">Identifiant :</label>
-                            <input type="text" name="f_username"  placeholder="Votre identifiant">
-                        </div>
-                        <div>
-                            <label for="f_password">Mot de passe :</label>
-                            <input type="password" name="f_password"  placeholder="Mot de passe">
-                        </div>
-                        <div >
-                            <label for="f_questionsecrete">Question secrète :</label>
-                            <input type="text" name="f_questionsecrete" placeholder="Question secrète">
-                        </div>
-                        <div >
-                            <label for="f_reponse">Réponse :</label>
-                            <input type="text" name="f_reponse" placeholder="Réponse" >
-                        </div>
-                        <div>
-                            <input type="submit" value="Envoyer"/>
+                <!--Formulaire-->
+                <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>"> 
+                    <h1>
+                        Créer un compte
+                    </h1>
+                    <div>
+                        <label for="f_nom">Nom : </label>
+                        <input type="text" name="f_nom" placeholder="Votre nom">
+                    </div>
                     
-                        </div>
-                    </form>
-                </div>
+                    <div>
+                        <label for="f_prenom">Prénom :</label>
+                        <input type="text" name="f_prenom" placeholder="Votre prénom">
+                    </div>
+                    <div >
+                        <label for="f_username">Identifiant :</label>
+                        <input type="text" name="f_username"  placeholder="Votre identifiant">
+                    </div>
+                    <div>
+                        <label for="f_password">Mot de passe :</label>
+                        <input type="password" name="f_password"  placeholder="Mot de passe">
+                    </div>
+                    <div >
+                        <label for="f_questionsecrete">Question secrète :</label>
+                        <input type="text" name="f_questionsecrete" placeholder="Question secrète">
+                    </div>
+                    <div >
+                        <label for="f_reponse">Réponse :</label>
+                        <input type="text" name="f_reponse" placeholder="Réponse" >
+                    </div>
+                    <div>
+                        <input type="submit" value="Envoyer"/>
+                
+                    </div>
+                </form>
+            </div>
 
 
             <?php
 
-
+//Stockage des données du formulaire dans des variables
 if ($_SERVER["REQUEST_METHOD"] == "POST")
 {                   $username=htmlentities(trim($_POST['f_username']));
                     $nom=htmlentities(($_POST['f_nom']));
@@ -60,13 +60,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST")
                     $password=htmlentities($_POST['f_password']);
                     $questionsecrete=htmlentities($_POST['f_questionsecrete']);
                     $reponse=htmlentities($_POST['f_reponse']);
-
+//Vérification que les champs ne sont pas vides
 if (    ($username != NULL ) 
     and ($nom != NULL ) 
     and ($prenom != NULL ) 
     and ($password != NULL ) 
     and ($questionsecrete != NULL ) 
-    and ($reponse != NULL ) ) //vérifie qu'aucun champ n'est vide
+    and ($reponse != NULL ) ) 
 
     {
     //try, catch = gestion des erreurs, execution en bloc complet uniquement

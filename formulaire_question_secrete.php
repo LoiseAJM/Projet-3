@@ -25,9 +25,9 @@
         { $reponse=htmlentities(trim($_POST['reponse']));
         
             if ($_SESSION['reponsesecrete'] == $reponse)
-        {echo '<meta http-equiv="refresh" content="0;index.php">';}
+        {echo '<meta http-equiv="refresh" content="0;change_password.php">';}
             else
-        {echo "<div class='centered'> Désolé, ce n'est pas la bonne réponse</div>";}
+        {echo "<div class='centered redbold'> Désolé, ce n'est pas la bonne réponse</div>";}
         }
 
     ?>

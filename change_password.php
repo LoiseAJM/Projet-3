@@ -1,0 +1,69 @@
+<?php session_start(); ?>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>GBAF</title>
+        <link rel="stylesheet" href="style.css">
+        <!--Favicon-->
+        <link rel="icon" type="image" href="images/favicon-gbaf.png" />
+    </head>
+    <body>
+    <?php require 'header.php'; ?>
+
+    <!--Formulaire de changement de mot de passe -->
+    <form method="post" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']);?>"> 
+        <h1>
+            Changer le mot de passe
+        </h1>
+        <br>
+        <div>
+            <label for="newpassword"> Nouveau mot de passe : </label>
+            <input type="password" name="newpassword" placeholder="Nouveau mot de passe">
+            <label for="newpassword_confirm"> Confirmer le mot de passe : </label>
+            <input type="password" name="newpassword_confirm" placeholder="Confirmer le mot de passe">
+            <input type="submit" value="Envoyer"/>
+        </div>
+    </form>
+ 
+     <?php   
+        if ($_SERVER["REQUEST_METHOD"] == "POST")
+            {   $newpassword=htmlentities(trim($_POST['newpassword']));
+                $newpassword_confirm=htmlentities(trim($_POST['newpassword_confirm']));
+                $identifiant = $_SESSION['account_id'];
+                
+                //Vérification que les mots de passe sont identiques
+                if ($newpassword == $newpassword_confirm)
+                    //Remplacement du mot de passe  dans la DB
+                    {try   
+                        { $conn = new PDO("mysql:host=localhost; dbname=dev;", 'dev', 'devpass');
+                        $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+                        $sql="UPDATE `account` SET `password`= :newpassword WHERE `account_id`= :identifiant  ";
+            
+                        $statement = $conn->prepare($sql);
+                        $statement->bindParam('newpassword', $newpassword);
+                        $statement->bindParam('identifiant', $identifiant);
+                        $statement->execute();
+
+                        //Confirmation 
+                        echo "<div class='centered'> Mot de passe changé avec succès, vous allez être redirigé vers la page de connexion. <br>
+                        <a href='index.php'>Si la redirection ne fonctionne pas, cliquez ici </a></div>";
+
+                        //Sortie de la session et redirection vers la page de connexion
+                        session_destroy();
+                        echo '<meta http-equiv="refresh" content="5;index.php">';
+                        }
+                            
+                    catch(PDOException $e) 
+                        { echo $sql . "<br>" . $e->getMessage();
+                        }
+                    }
+                
+                else
+                    {echo "<div class='centered redbold'> Le mot de passe doit être le même.</div>";
+                    }
+            }
+
+    ?>
+    <?php require 'footer.php'; ?>
+    </body>
+</html>
