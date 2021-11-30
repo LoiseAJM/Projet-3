@@ -33,33 +33,39 @@
                 
                 //Vérification que les mots de passe sont identiques
                 if ($newpassword == $newpassword_confirm)
-                    //Remplacement du mot de passe  dans la DB
-                    {try   
-                        { $conn = new PDO("mysql:host=localhost; dbname=dev;", 'dev', 'devpass');
-                        $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-                        $sql="UPDATE `account` SET `password`= :newpassword WHERE `account_id`= :identifiant  ";
-            
-                        $statement = $conn->prepare($sql);
-                        $statement->bindParam('newpassword', $newpassword);
-                        $statement->bindParam('identifiant', $identifiant);
-                        $statement->execute();
+                    //Vérification que le mot de passe est sécurisé
+                    if (strlen($newpassword)>7)
+                    {//Remplacement du mot de passe dans la DB
+                        {try   
+                            { $conn = new PDO("mysql:host=localhost; dbname=dev;", 'dev', 'devpass');
+                            $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+                            $sql="UPDATE `account` SET `password`= :newpassword WHERE `account_id`= :identifiant  ";
+                            $newpasswordsecure = password_hash($newpassword, PASSWORD_DEFAULT); 
+                            $statement = $conn->prepare($sql);
+                            $statement->bindParam('newpassword', $newpasswordsecure);
+                            $statement->bindParam('identifiant', $identifiant);
+                            $statement->execute();
 
-                        //Confirmation 
-                        echo "<div class='centered'> Mot de passe changé avec succès, vous allez être redirigé vers la page de connexion. <br>
-                        <a href='index.php'>Si la redirection ne fonctionne pas, cliquez ici </a></div>";
+                            //Confirmation 
+                            echo "<div class='centered'> Mot de passe changé avec succès, vous allez être redirigé vers la page de connexion. <br>
+                            <a href='index.php'>Si la redirection ne fonctionne pas, cliquez ici </a></div>";
 
-                        //Sortie de la session et redirection vers la page de connexion
-                        session_destroy();
-                        echo '<meta http-equiv="refresh" content="5;index.php">';
-                        }
-                            
-                    catch(PDOException $e) 
-                        { echo $sql . "<br>" . $e->getMessage();
+                            //Sortie de la session et redirection vers la page de connexion
+                            session_destroy();
+                            echo '<meta http-equiv="refresh" content="5;index.php">';
+                            }
+                                
+                        catch(PDOException $e) 
+                            { echo $sql . "<br>" . $e->getMessage();
+                            }
                         }
                     }
+                    else
+                        { echo "<div class='centered redbold'>Le mot de passe doit faire au moins 8 caractères</div>";
+                        }
                 
                 else
-                    {echo "<div class='centered redbold'> Le mot de passe doit être le même.</div>";
+                    {echo "<div class='centered redbold'> Le mot de passe doit être le même dans les deux champs.</div>";
                     }
             }
 
