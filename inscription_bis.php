@@ -19,32 +19,39 @@
                     </h1>
                     <div>
                         <label for="f_nom">Nom : </label>
-                        <input id = "f_nom" type="text" name="f_nom" placeholder="Votre nom">
+                        <input id = "f_nom" type="text" name="f_nom" required ='required' placeholder="Votre nom">
+                        <span id = "nom_erreur"></span>
                     </div>
                     
                     <div>
                         <label for="f_prenom">Prénom :</label>
-                        <input id="f_prenom" type="text" name="f_prenom" placeholder="Votre prénom">
+                        <input id="f_prenom" type="text" name="f_prenom" required ='required' placeholder="Votre prénom">
+                        <span id = "prenom_erreur"></span>
                     </div>
                     <div >
                         <label for="f_username">Identifiant :</label>
-                        <input id="f_username" type="text" name="f_username"  placeholder="Votre identifiant">
+                        <input id="f_username" type="text" name="f_username" required ='required'  placeholder="Votre identifiant">
+                        <span id = "username_erreur"></span>
                     </div>
                     <div>
                         <label for="f_password">Mot de passe (au moins 8 caractères):</label>
-                        <input id="f_password" type="password" name="f_password"  placeholder="Mot de passe">
+                        <input id="f_password" type="password" name="f_password" required ='required' minlength= '8 ' placeholder="Mot de passe">
+                        <span id = "password_erreur"></span>
                     </div>
                     <div>
                         <label for="f_passwordconfirm">Confirmer le mot de passe</label>
-                        <input id="f_passwordconfirm" type="password" name="f_passwordconfirm"  placeholder="Mot de passe">
+                        <input id="f_passwordconfirm" type="password" name="f_passwordconfirm" required ='required' placeholder="Mot de passe">
+                        <span id = "passwordconfirm_erreur"></span>
                     </div>
                     <div >
                         <label for="f_questionsecrete">Question secrète :</label>
-                        <input id="f_questionsecrete" type="text" name="f_questionsecrete" placeholder="Question secrète">
+                        <input id="f_questionsecrete" type="text" name="f_questionsecrete" required ='required'placeholder="Question secrète">
+                        <span id = "questionsecrete_erreur"></span>
                     </div>
                     <div >
                         <label for="f_reponse">Réponse :</label>
-                        <input id="f_reponse" type="text" name="f_reponse" placeholder="Réponse" >
+                        <input id="f_reponse" type="text" name="f_reponse" required ='required' placeholder="Réponse" >
+                        <span id = "reponse_erreur"></span>
                     </div>
                     <div>
                         <input id = "submit" type="submit" value="Envoyer"/>
@@ -77,27 +84,6 @@
                 $row = $statement1->fetch() ;
 
                 //vérification que la confirmation de mot de passe est correcte
-                if ( ($password == $passwordconfirm) 
-                    //Vérification que les champs ne sont pas vides
-                    and ($username != NULL ) 
-                    and ($nom != NULL ) 
-                    and ($prenom != NULL ) 
-                    and ($password != NULL ) 
-                    and ($questionsecrete != NULL ) 
-                    and ($reponse != NULL ) 
-                    //Vérification que l'username n'existe pas
-                    and empty ($row['username'])
-                    //Vérification que le mot de passe est sécurisé
-                    and (strlen($password)>7)
-                    and ($username != $password)
-                    and ($username != $nom)
-                    and ($username != $prenom)
-                    and ($username != $password)
-                    and ($username != $questionsecrete)
-                    and ($username != $reponse)
-                    )
-                
-                    {
                     try {
                         $conn = new PDO("mysql:host=localhost; dbname=dev;", 'dev', 'devpass');
                         //Exception : Mode Erreur de PDO 
@@ -114,31 +100,15 @@
                         $statement->bindParam('att_reponse', $reponse);
                         $statement->bindParam('att_username', $username);
                         $statement->execute();
-                     //   echo "<meta http-equiv='refresh' content='0;redirection_inscription_reussie.php'>";
+                     echo "<meta http-equiv='refresh' content='0;redirection_inscription_reussie.php'>";
                         } 
                     catch(PDOException $e) 
                         {
                         echo $sql . "<br>" . $e->getMessage();
                         }
                     $conn = null;
-                    }
-                elseif ($password !== $passwordconfirm)
-                    {
-                   // echo "<meta http-equiv='refresh' content='0;redirection_differents_mot_passe.php'>";
-                    }
-                elseif (($username == NULL ) or ($nom == NULL ) or ($prenom == NULL ) or ($password == NULL ) or ($questionsecrete == NULL ) or ($reponse == NULL ))
-                    {
-                   //     echo "<meta http-equiv='refresh' content='0;redirection_champs_nuls.php'>";
-                    }
-                elseif ( !empty ($row['username']) )
-                    {
-                    //    echo "<meta http-equiv='refresh' content='0;redirection_identifiant_existe.php'>";
-                    }
-                elseif ((strlen($password)<7) or ($username == $password) or ($nom == $password) or ($prenom == $password) or ($questionsecrete==$password) or ($questionsecrete==$reponse))
-                    {
-                   //     echo "<meta http-equiv='refresh' content='0;redirection_pass_insecure.php'>";
-                    }
                 }
+                
         ?>
 
 

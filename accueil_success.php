@@ -10,9 +10,6 @@
     <body>   
         <?php require 'header.php'; ?>
 
-        <div class="container">
-       
-
             <!--Section présentation -->
             <section id="presentation">
                 <h1>Le GBAF</h1>
@@ -26,6 +23,8 @@
                     </p>
 
             </section>
+
+            
 
             <!--Section acteurs-->
             <section id="acteurs">Section acteurs </section>
