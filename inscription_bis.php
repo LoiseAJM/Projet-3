@@ -19,38 +19,38 @@
                     </h1>
                     <div>
                         <label for="f_nom">Nom : </label>
-                        <input id = "f_nom" type="text" name="f_nom" required ='required' placeholder="Votre nom">
+                        <input id = "f_nom" type="text" name="f_nom" required="true" placeholder="Votre nom">
                         <span id = "nom_erreur"></span>
                     </div>
                     
                     <div>
                         <label for="f_prenom">Prénom :</label>
-                        <input id="f_prenom" type="text" name="f_prenom" required ='required' placeholder="Votre prénom">
+                        <input id="f_prenom" type="text" name="f_prenom" required="true" placeholder="Votre prénom">
                         <span id = "prenom_erreur"></span>
                     </div>
                     <div >
                         <label for="f_username">Identifiant :</label>
-                        <input id="f_username" type="text" name="f_username" required ='required'  placeholder="Votre identifiant">
+                        <input id="f_username" type="text" name="f_username"  required="true" placeholder="Votre identifiant">
                         <span id = "username_erreur"></span>
                     </div>
                     <div>
                         <label for="f_password">Mot de passe (au moins 8 caractères):</label>
-                        <input id="f_password" type="password" name="f_password" required ='required' minlength= '8 ' placeholder="Mot de passe">
+                        <input id="f_password" type="password" name="f_password" minlength= '8 ' required="true" placeholder="Mot de passe">
                         <span id = "password_erreur"></span>
                     </div>
                     <div>
                         <label for="f_passwordconfirm">Confirmer le mot de passe</label>
-                        <input id="f_passwordconfirm" type="password" name="f_passwordconfirm" required ='required' placeholder="Mot de passe">
+                        <input id="f_passwordconfirm" type="password" name="f_passwordconfirm" required="true" placeholder="Mot de passe">
                         <span id = "passwordconfirm_erreur"></span>
                     </div>
                     <div >
                         <label for="f_questionsecrete">Question secrète :</label>
-                        <input id="f_questionsecrete" type="text" name="f_questionsecrete" required ='required'placeholder="Question secrète">
+                        <input id="f_questionsecrete" type="text" name="f_questionsecrete" required="true" placeholder="Question secrète">
                         <span id = "questionsecrete_erreur"></span>
                     </div>
                     <div >
                         <label for="f_reponse">Réponse :</label>
-                        <input id="f_reponse" type="text" name="f_reponse" required ='required' placeholder="Réponse" >
+                        <input id="f_reponse" type="text" name="f_reponse" required="true" placeholder="Réponse" >
                         <span id = "reponse_erreur"></span>
                     </div>
                     <div>
