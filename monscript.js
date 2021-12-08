@@ -5,7 +5,8 @@ let f_password = document.getElementById("f_password");
 let f_passwordconfirm = document.getElementById("f_passwordconfirm");
 let f_questionsecrete = document.getElementById("f_questionsecrete");
 let f_reponse = document.getElementById("f_reponse");
-let name_validation = /^[a-zA-ZàáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð ,.'-]+$/u;
+let name_validation = /^[a-zA-Z\-]+$/;
+let password_validation = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])[0-9a-zA-Z]{8,}$/;
 let variableRecuperee = document.getElementById("variableAPasser");
 let nom_erreur = document.getElementById("nom_erreur");
 let prenom_erreur = document.getElementById('prenom_erreur');
@@ -86,14 +87,23 @@ function f_valid(e)
             password_erreur.style.color= 'red';
         } 
         else /* Si le mot de passe est renseigné */
-        {   
-            if (f_password.value == f_passwordconfirm.value)
-            {password_erreur.textContent = '';
+        {   if (password_validation.test(f_password.value)) /*si le mot de passe est sécurisé*/
+            {    
+                if (f_password.value == f_passwordconfirm.value) /*si le mot de passe est identique à la confirmation */ 
+                {  
+                    password_erreur.textContent = '';
+                }
+                else /*si la confirmation n'est pas identique au mot de passe */
+                {
+                e.preventDefault();
+                password_erreur.textContent = 'Les mots de passe ne correspondent pas';
+                password_erreur.style.color= 'red';
+                }
             }
-            else
+            else /*si le mot de passe n'est pas sécurisé*/
             {
             e.preventDefault();
-            password_erreur.textContent = 'Les mots de passe ne correspondent pas';
+            password_erreur.textContent = "Le mot de passe n'est pas assez sécurisé";
             password_erreur.style.color= 'red';
             }
         }

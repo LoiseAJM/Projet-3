@@ -34,7 +34,7 @@
                         <span id = "username_erreur"></span>
                     </div>
                     <div>
-                        <label for="f_password">Mot de passe (au moins 8 caractères):</label>
+                        <label for="f_password">Mot de passe ( doit contenir au moins 8 caractères, dont un chiffre, une majuscule et une minuscule ):</label>
                         <input id="f_password" type="password" name="f_password" minlength= '8 ' required="true" placeholder="Mot de passe">
                         <span id = "password_erreur"></span>
                     </div>
