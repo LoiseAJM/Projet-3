@@ -88,8 +88,7 @@ function f_valid(e)
         else /* Si le mot de passe est renseigné */
         {   
             if (f_password.value == f_passwordconfirm.value)
-            {password_erreur.textContent = 'cest bon';
-            e.preventDefault();
+            {password_erreur.textContent = '';
             }
             else
             {
