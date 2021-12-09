@@ -5,7 +5,7 @@ let f_password = document.getElementById("f_password");
 let f_passwordconfirm = document.getElementById("f_passwordconfirm");
 let f_questionsecrete = document.getElementById("f_questionsecrete");
 let f_reponse = document.getElementById("f_reponse");
-let name_validation = /^[a-zA-Z\-]+$/;
+let name_validation = /^[\w'\-,.][^0-9_!¡?÷?¿/\\+=@#$%ˆ&*(){}|~<>;:[\]]{2,}$/;
 let password_validation = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])[0-9a-zA-Z]{8,}$/;
 let variableRecuperee = document.getElementById("variableAPasser");
 let nom_erreur = document.getElementById("nom_erreur");
@@ -16,8 +16,11 @@ let passwordconfirm_erreur = document.getElementById('passwordconfirm_erreur');
 let questionsecrete_erreur = document.getElementById('questionsecrete_erreur');
 let reponse_erreur = document.getElementById('reponse_erreur');
 let validation = document.getElementById("submit");
-validation.addEventListener('click', f_valid);
-function f_valid(e)
+
+
+validation.addEventListener('click', verification_formulaire_inscription);
+
+function verification_formulaire_inscription(e)
     {         
         if (f_nom.validity.valueMissing) /* Si le champ Nom n'est pas renseigné */
         { 
@@ -108,25 +111,23 @@ function f_valid(e)
             }
         }
 
-        /* Si la question secrète est vide */
-        if (f_questionsecrete.validity.valueMissing)
+        
+        if (f_questionsecrete.validity.valueMissing) /* Si la question secrète est vide */
         {   e.preventDefault();
             questionsecrete_erreur.textContent ='Veuillez renseigner une question secrète';
             questionsecrete_erreur.style.color='red';
         }
-        /* Si la question secrète est correcte */
-        if (f_questionsecrete.validity.valueMissing == false)
+        else /*Si la question secrète est renseignée*/
         {  
             questionsecrete_erreur.textContent ='';
         }
-        /* Si la réponse est vide */
-        if (f_reponse.validity.valueMissing)
+        
+        if (f_reponse.validity.valueMissing) /* Si la réponse est vide */
         {   e.preventDefault();
             reponse_erreur.textContent ='Veuillez renseigner une réponse';
             reponse_erreur.style.color ='red';
         }
-        /* Si la réponse est correcte */
-        if (f_reponse.validity.valueMissing == false)
+        else /*Si la réponse est renseignée*/
         { 
             reponse_erreur.textContent ='';
         }

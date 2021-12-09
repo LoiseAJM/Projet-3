@@ -67,6 +67,34 @@ form {
     border-radius: 0px;
 }
 
+
+#acteurs_liste
+{
+    width:80%;
+    margin-left: auto;
+    margin-right: auto;
+
+    border: 1px solid black;
+    background: #fff;
+}
+.acteur
+{
+    background-color: blue;
+    display: inline-flex;
+    border: 1px solid black;
+    padding: 5px;
+    margin : 5px;
+
+}
+.acteur_logo
+{width: 15%;
+}
+.acteur_corps
+{width: 70%;
+}
+.acteur_button
+{width: 15%;
+}
 /* Full-width inputs */
 input[type=text], input[type=password] {
     width: 100%;
@@ -149,3 +177,7 @@ form h1
     bottom: 0.5em;
     right : 30px;
 }
+.wrapper 
+{
+    display: grid;
+  }

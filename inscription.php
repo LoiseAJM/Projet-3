@@ -19,38 +19,38 @@
                     </h1>
                     <div>
                         <label for="f_nom">Nom : </label>
-                        <input id = "f_nom" type="text" name="f_nom" placeholder="Votre nom">
+                        <input id = "f_nom" type="text" name="f_nom" required="true" placeholder="Votre nom">
                         <span id = "nom_erreur"></span>
                     </div>
                     
                     <div>
                         <label for="f_prenom">Prénom :</label>
-                        <input id="f_prenom" type="text" name="f_prenom" placeholder="Votre prénom">
+                        <input id="f_prenom" type="text" name="f_prenom" required="true" placeholder="Votre prénom">
                         <span id = "prenom_erreur"></span>
                     </div>
                     <div >
                         <label for="f_username">Identifiant :</label>
-                        <input id="f_username" type="text" name="f_username"  placeholder="Votre identifiant">
+                        <input id="f_username" type="text" name="f_username"  required="true" placeholder="Votre identifiant">
                         <span id = "username_erreur"></span>
                     </div>
                     <div>
-                        <label for="f_password">Mot de passe (au moins 8 caractères):</label>
-                        <input id="f_password" type="password" name="f_password"  placeholder="Mot de passe">
+                        <label for="f_password">Mot de passe ( doit contenir au moins 8 caractères, dont un chiffre, une majuscule et une minuscule ):</label>
+                        <input id="f_password" type="password" name="f_password" minlength= '8 ' required="true" placeholder="Mot de passe">
                         <span id = "password_erreur"></span>
                     </div>
                     <div>
                         <label for="f_passwordconfirm">Confirmer le mot de passe</label>
-                        <input id="f_passwordconfirm" type="password" name="f_passwordconfirm"  placeholder="Mot de passe">
+                        <input id="f_passwordconfirm" type="password" name="f_passwordconfirm" required="true" placeholder="Mot de passe">
                         <span id = "passwordconfirm_erreur"></span>
                     </div>
                     <div >
                         <label for="f_questionsecrete">Question secrète :</label>
-                        <input id="f_questionsecrete" type="text" name="f_questionsecrete" placeholder="Question secrète">
+                        <input id="f_questionsecrete" type="text" name="f_questionsecrete" required="true" placeholder="Question secrète">
                         <span id = "questionsecrete_erreur"></span>
                     </div>
                     <div >
                         <label for="f_reponse">Réponse :</label>
-                        <input id="f_reponse" type="text" name="f_reponse" placeholder="Réponse" >
+                        <input id="f_reponse" type="text" name="f_reponse" required="true" placeholder="Réponse" >
                         <span id = "reponse_erreur"></span>
                     </div>
                     <div>
@@ -66,7 +66,7 @@
         <?php
             //Stockage des données du formulaire dans des variables
             if ($_SERVER["REQUEST_METHOD"] == "POST")
-                {
+            {
                 $username=htmlentities(trim($_POST['f_username']));
                 $nom=htmlentities(($_POST['f_nom']));
                 $prenom=htmlentities($_POST['f_prenom']);
@@ -83,29 +83,10 @@
                 $statement1->execute();
                 $row = $statement1->fetch() ;
 
-                //vérification que la confirmation de mot de passe est correcte
-                if ( ($password == $passwordconfirm) 
-                    //Vérification que les champs ne sont pas vides
-                    and ($username != NULL ) 
-                    and ($nom != NULL ) 
-                    and ($prenom != NULL ) 
-                    and ($password != NULL ) 
-                    and ($questionsecrete != NULL ) 
-                    and ($reponse != NULL ) 
-                    //Vérification que l'username n'existe pas
-                    and empty ($row['username'])
-                    //Vérification que le mot de passe est sécurisé
-                    and (strlen($password)>7)
-                    and ($username != $password)
-                    and ($username != $nom)
-                    and ($username != $prenom)
-                    and ($username != $password)
-                    and ($username != $questionsecrete)
-                    and ($username != $reponse)
-                    )
-                
+                if (empty ($row['username'])) // on vérifie qu'il n'existe pas un username identique dans la BDD
+                {
+                    try 
                     {
-                    try {
                         $conn = new PDO("mysql:host=localhost; dbname=dev;", 'dev', 'devpass');
                         //Exception : Mode Erreur de PDO 
                         $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
@@ -121,48 +102,24 @@
                         $statement->bindParam('att_reponse', $reponse);
                         $statement->bindParam('att_username', $username);
                         $statement->execute();
-                     echo "<meta http-equiv='refresh' content='0;redirection_inscription_reussie.php'>";
-                        } 
+                        echo "<meta http-equiv='refresh' content='0;redirection_inscription_reussie.php'>";
+                    } 
                     catch(PDOException $e) 
-                        {
+                    {
                         echo $sql . "<br>" . $e->getMessage();
-                        }
+                    }
                     $conn = null;
-                    }
-                elseif ($password !== $passwordconfirm)
-                    { echo "
-                        <script type='text/javascript'>
-                        let validation = document.getElementById('submit');
-                        let passwordconfirm_erreur = document.getElementById('passwordconfirm_erreur');
-                        passwordconfirm_erreur.textContent = 'Les mots de passe sont différents';
-                        passwordconfirm_erreur.style.color= 'red';
-                        </script>
-                        ";
-                         
-                    }
-                elseif (($username == NULL ) or ($nom == NULL ) or ($prenom == NULL ) or ($password == NULL ) or ($questionsecrete == NULL ) or ($reponse == NULL ))
-                    {
-                        echo "
-                        <script type='text/javascript'>
-                        let validation = document.getElementById('submit');
-                        let passwordconfirm_erreur = document.getElementById('passwordconfirm_erreur');
-                        passwordconfirm_erreur.textContent = 'Les mots de passe sont différents';
-                        passwordconfirm_erreur.style.color= 'red';
-                        </script>
-                        ";
-                   //     echo "<meta http-equiv='refresh' content='0;redirection_champs_nuls.php'>";
-                    }
-                elseif ( !empty ($row['username']) )
-                    {
-                    //    echo "<meta http-equiv='refresh' content='0;redirection_identifiant_existe.php'>";
-                    }
-                elseif ((strlen($password)<7) or ($username == $password) or ($nom == $password) or ($prenom == $password) or ($questionsecrete==$password) or ($questionsecrete==$reponse))
-                    {
-                   //     echo "<meta http-equiv='refresh' content='0;redirection_pass_insecure.php'>";
-                    }
                 }
+                else
+                {
+                    echo "<meta http-equiv='refresh' content='0;redirection_identifiant_existe.php'>";
+                }
+            }
+            
+
         ?>
 
 
+<script type="text/javascript" src="monscript.js"></script>
     </body>
 </html>

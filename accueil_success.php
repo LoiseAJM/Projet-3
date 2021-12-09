@@ -9,9 +9,8 @@
     </head>
     <body>   
         <?php require 'header.php'; ?>
-
             <!--Section présentation -->
-            <section id="presentation">
+            <div id="presentation">
                 <h1>Le GBAF</h1>
                 <p>Le <strong> Groupement Banque Assurance Français (GBAF) </strong> est une fédération représentant 
                     les 6 grands groupes français : BNP Paribas, BPCE, Crédit Agricole, Crédit Mutuel-CIC, Société Générale
@@ -22,12 +21,47 @@
                     pouvoirs publics.
                     </p>
 
-            </section>
-
+            </div>
             
-
             <!--Section acteurs-->
-            <section id="acteurs">Section acteurs </section>
+            <div id="acteurs_liste">
+                <div class ="acteur">
+                    <div class ="acteur_logo">
+                        <p>acteur_logo acteur_logo acteur_logo acteur_logo acteur_logo acteur_logo</p>
+                    </div>
+                    <div class = "acteur_corps">
+                        <div class ="acteur_titre">
+                            <h3>Formation & Co</h3>
+                        </div>
+                        <div class ="acteur_description">
+                        <p> Formation&co est une association française présente sur tout le territoire. 
+                            Nous proposons à des personnes issues de tout milieu de devenir entrepreneur grâce à un crédit et un accompagnement professionnel et personnalisé
+                        </p>
+                        </div>
+                    </div>
+                    <div class ="acteur_button">
+                        <p>acteur_button acteur_button acteur_button acteur_button acteur_button</p>
+                    </div>
+                </div>
+                <div class ="acteur">
+                    <div class ="acteur_logo">
+                        <p>hello</p>
+                    </div>
+                    <div class = "acteur_corps">
+                        <div class ="acteur_titre">
+                            <h3>Formation & Co</h3>
+                        </div>
+                        <div class ="acteur_description">
+                        <p> Formation&co est une association française présente sur tout le territoire. 
+                            Nous proposons à des personnes issues de tout milieu de devenir entrepreneur grâce à un crédit et un accompagnement professionnel et personnalisé
+                        </p>
+                        </div>
+                    </div>
+                    <div class ="acteur_button">
+                        
+                    </div>
+                </div>
+            </div>
             <?php require 'footer.php'; ?>
          
  </html>
