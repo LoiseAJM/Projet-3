@@ -11,9 +11,9 @@
 
     <body> <?php if ((isset ($_SESSION['prenomnom'] )))
             { 
-            require 'header.php'; 
-            require 'presentationgbaf.php';
-            require 'footer.php' ;  }
+     
+            require 'accueil_success.php';
+            }
             else
             { 
             require 'header.php'; 

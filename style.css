@@ -70,31 +70,60 @@ form {
 
 #acteurs_liste
 {
-    width:80%;
     margin-left: auto;
     margin-right: auto;
 
     border: 1px solid black;
     background: #fff;
+    padding: 0.5%;
 }
 .acteur
 {
-    background-color: blue;
+    background-color: rgba(211, 211, 211, 0.596);
     display: inline-flex;
     border: 1px solid black;
     padding: 5px;
     margin : 5px;
 
 }
+.image_logo
+{
+    max-width: 100%;
+    max-height: 100%;
+}
 .acteur_logo
-{width: 15%;
+{width: 20%;
 }
 .acteur_corps
-{width: 70%;
+{width: 65%;
+margin-right: 2%;
+margin-left: 2%;
 }
 .acteur_button
 {width: 15%;
 }
+.acteur_button_click
+{   background-color:#ff0000;
+	border-radius:28px;
+	border:1px solid #ab1919;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+
+	text-decoration:none;
+	text-shadow:0px 1px 0px #000000;
+    width: 90%;
+    height: 4em;
+    bottom: 2px;
+
+}
+.acteur_button_click:hover
+{
+    background-color:#bd2a2a;
+}
+
+
 /* Full-width inputs */
 input[type=text], input[type=password] {
     width: 100%;
@@ -158,10 +187,10 @@ form h1
     margin-top: 5px;
     
 }
-#presentation.blocktext
+#conteneur
 {
-    margin-left: auto;
-    margin-right: 20%;
+    width: 80%;
+    margin:auto;
 }
 .menusuperieur {
     display: inline-flex;
