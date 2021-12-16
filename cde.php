@@ -12,8 +12,10 @@
 
     <body> 
     <?php require 'header.php'; ?>
+    <div class="conteneur">
     La CDE (Chambre Des Entrepreneurs) accompagne les entreprises dans leurs démarches de formation. 
 Son président est élu pour 3 ans par ses pairs, chefs d’entreprises et présidents des CDE.
+</div>
 
 <?php require 'footer.php'; ?>
     </body>

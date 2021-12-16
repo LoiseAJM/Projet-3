@@ -24,8 +24,11 @@
        $password = $row['password'] ;
        $nom = $row['last_name'];
        $prenom = $row['first_name'];
+       $account_id= $row['account_id'];
+       $username=$row['username'];
+
        
-           if(empty ($row['username']))
+           if(empty ($username))
                {
                session_destroy();
                require 'header.php';
@@ -38,6 +41,10 @@
                if (password_verify($motdepasseconnexion, $password))
                    {
                     $_SESSION['prenomnom'] = $prenom . ' ' . $nom;
+                    $_SESSION['account_id'] =  $account_id;
+                    $_SESSION['username'] = $username;
+
+
                     echo '<meta http-equiv="refresh" content="0;accueil_success.php">' ;
                     
                    }

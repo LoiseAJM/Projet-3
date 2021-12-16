@@ -11,8 +11,8 @@
 
     <body> 
     <?php require 'header.php'; ?>
-    Formation&co est une association française présente sur tout le territoire.
-Nous proposons à des personnes issues de tout milieu de devenir entrepreneur grâce à un crédit et un accompagnement professionnel et personnalisé.
+    <p>Formation&co est une association française présente sur tout le territoire.</p>
+<p>Nous proposons à des personnes issues de tout milieu de devenir entrepreneur grâce à un crédit et un accompagnement professionnel et personnalisé.</p>
 Notre proposition : 
 - un financement jusqu’à 30 000€ ;
 - un suivi personnalisé et gratuit ;

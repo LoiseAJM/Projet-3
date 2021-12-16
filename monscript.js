@@ -7,7 +7,6 @@ let f_questionsecrete = document.getElementById("f_questionsecrete");
 let f_reponse = document.getElementById("f_reponse");
 let name_validation = /^[\w'\-,.][^0-9_!¡?÷?¿/\\+=@#$%ˆ&*(){}|~<>;:[\]]{2,}$/;
 let password_validation = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])[0-9a-zA-Z]{8,}$/;
-let variableRecuperee = document.getElementById("variableAPasser");
 let nom_erreur = document.getElementById("nom_erreur");
 let prenom_erreur = document.getElementById('prenom_erreur');
 let username_erreur = document.getElementById('username_erreur');
@@ -16,9 +15,10 @@ let passwordconfirm_erreur = document.getElementById('passwordconfirm_erreur');
 let questionsecrete_erreur = document.getElementById('questionsecrete_erreur');
 let reponse_erreur = document.getElementById('reponse_erreur');
 let validation = document.getElementById("submit");
+let formulaire_inscription = document.getElementById("formulaire_inscription");
 
 
-validation.addEventListener('click', verification_formulaire_inscription);
+formulaire_inscription.addEventListener('submit', verification_formulaire_inscription);
 
 function verification_formulaire_inscription(e)
     {         

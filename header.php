@@ -24,7 +24,7 @@ if(session_id() == '') {
   <a   href="index.php"> <img id="logoGBAF" src="images/logo_gbaf.png" alt="logo GBAF"/></a>
   <div class="right_align bottom_align"><p><?php
    if (isset ($_SESSION['prenomnom'] ))
-   { echo 'Bonjour ' .$_SESSION['prenomnom'] ;}
+   { echo 'Bonjour ' .$_SESSION['prenomnom'];}
    else {echo "Bonjour, vous n'êtes pas connecté";} ?></p>
 <p><?php
    if (isset ($_SESSION['prenomnom'] ))
