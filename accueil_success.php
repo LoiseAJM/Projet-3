@@ -10,6 +10,8 @@
     </head>
     <body>   
         <?php require 'header.php'; ?>
+
+        
     <div class="page">
         <div class="conteneur">
             <!--Section présentation -->
@@ -47,7 +49,11 @@
  <?php while ( $row = $statement1->fetch(PDO::FETCH_ASSOC))  : ;
          ?>
           <?php $acteur_description = substr($row['acteur_description'],0,150) . "..." ; 
-          $acteur_description_encode = utf8_encode($acteur_description)?> 
+          $acteur_description_encode = utf8_encode($acteur_description);
+          $acteur_id=$row['acteur_id'];
+          $url_acteur='\'presentation_acteur.php?id=' . $acteur_id . '\'';
+          
+          ?> 
                 <div class ="acteur">
                     <div class ="acteur_logo">
                         <img class="image_logo" src=<?php echo $row['acteur_logo']; ?>></img>
@@ -62,7 +68,7 @@
                          </div>
                     </div>
                     <div class ="acteur_button">
-                        <button class ="acteur_button_click" onclick="window.location.href='formation_co.php'">Lire la suite</button>
+                        <button class ="acteur_button_click" onclick="window.location.href=<?php echo $url_acteur; ?>">Lire la suite</button>
                     </div>
                 </div>
                     <?php endwhile; ?>
