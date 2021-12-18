@@ -1,12 +1,13 @@
 <?php session_start(); ?>
 <html>
 <head>
-        <meta charset="utf-8">
-        <title>Connexion</title>
-        <link rel="stylesheet" href="style.css">
-        <!--Favicon-->
-        <link rel="icon" type="image" href="images/favicon-gbaf.png" />
-    </head>    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Vérification</title>
+    <link rel="stylesheet" href="style.css">
+    <!--Favicon-->
+    <link rel="icon" type="image" href="images/favicon-gbaf.png" />
+</head>  
 <!--Utilisateur connecté-->
     <?php
       {

@@ -1,12 +1,13 @@
 <?php session_start(); ?>
 <html>
-    <head>
-        <meta charset="utf-8">
-        <title>GBAF</title>
-        <link rel="stylesheet" href="style.css">
-        <!--Favicon-->
-        <link rel="icon" type="image" href="images/favicon-gbaf.png" />
-    </head>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Formulaire question secrète</title>
+    <link rel="stylesheet" href="style.css">
+    <!--Favicon-->
+    <link rel="icon" type="image" href="images/favicon-gbaf.png" />
+</head>
     <body>
     <?php require 'header.php'; ?>
     <form method="post" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']);?>"> 

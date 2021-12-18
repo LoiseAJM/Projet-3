@@ -1,6 +1,11 @@
 <html>
 <head>
-<title>Redirection</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Redirection</title>
+    <link rel="stylesheet" href="style.css">
+    <!--Favicon-->
+    <link rel="icon" type="image" href="images/favicon-gbaf.png" />
 </head>
 <meta http-equiv="refresh" content="4;accueil_success.php">
 <?php require 'header.php'; ?>

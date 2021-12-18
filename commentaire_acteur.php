@@ -2,7 +2,9 @@
 <html>
     <head>
         <meta charset="utf-8">
-        <title>Commentaire</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <title>Commentaire acteurs</title>
         <link rel="stylesheet" href="style.css">
         <!--Favicon-->
         <link rel="icon" type="image" href="images/favicon-gbaf.png" />
@@ -15,13 +17,6 @@
         
         <!--On récupère l'ID de l'acteur dans l'URL-->
         <?php $acteur_id= $_GET['id']; ?>
-
-        <?php 
-    $url = "http";
-  $url .= "://"; 
-  $url .= $_SERVER['HTTP_HOST']; 
-  $url .= $_SERVER['REQUEST_URI']; 
-?>
 
         <!-- Connexion à la BDD pour récupérer les infos acteur-->
         <?php
@@ -36,7 +31,7 @@
         ?>
         
                 <!--Formulaire-->
-                <form id="formulaire_inscription" method="post" action="<?php echo $url ;?>"> 
+                <form id="formulaire_inscription" method="post"> 
                     <h1 id="titre_formulaire">
                     <?php echo $acteur_name ?>
                     </h1>
@@ -87,9 +82,8 @@
                 {
                     try 
                     {
-                        $conn3 = new PDO("mysql:host=localhost; dbname=dev;", 'dev', 'devpass');
                         //Exception : Mode Erreur de PDO 
-                        $conn3->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+                        $connexion->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
                         $sql3 = "INSERT INTO `post`( `user_id`, `acteur_id`, `date_add`, `post`) 
                         VALUES ( :account_id, :acteur_id, :date, :commentaire  )";
                     
@@ -101,14 +95,14 @@
                         $statement->bindParam('commentaire', $commentaire);
                         $statement->execute();
 
-                        $conn2 = new PDO("mysql:host=localhost; dbname=dev;", 'dev', 'devpass');
+                        
                         //Exception : Mode Erreur de PDO 
-                        $conn2->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+                        $connexion->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
                         $sql2 = "INSERT INTO `vote`( `user_id`, `acteur_id`, `vote`) 
                         VALUES ( :account_id, :acteur_id, :avis )";
                     
                     // use exec() because no results are returned
-                        $statement=$conn->prepare($sql2);
+                        $statement=$connexion->prepare($sql2);
                         $statement->bindParam('account_id', $account_id);
                         $statement->bindParam('acteur_id', $acteur_id);
                         $statement->bindParam('avis', $avis);
@@ -120,7 +114,7 @@
                     {
                         echo $sql . "<br>" . $e->getMessage();
                     }
-                    $conn = null;
+                    $connexion = null;
                 }
                 else
                 {

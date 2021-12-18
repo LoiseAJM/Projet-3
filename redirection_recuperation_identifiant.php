@@ -1,6 +1,11 @@
 <html>
 <head>
-<title>Redirection</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Récupération de mot de passe</title>
+    <link rel="stylesheet" href="style.css">
+    <!--Favicon-->
+    <link rel="icon" type="image" href="images/favicon-gbaf.png" />
 </head>
 <?php require 'header.php'; ?>
 <div class="boxed">

@@ -1,9 +1,9 @@
 <?php session_start(); ?>
 <html>
-
     <head>
         <meta charset="utf-8">
-        <title>Connexion</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Présentation acteur</title>
         <link rel="stylesheet" href="style.css">
         <!--Favicon-->
         <link rel="icon" type="image" href="images/favicon-gbaf.png" />
@@ -42,12 +42,11 @@
         </div>
 
         <div class= "boxed_80"> 
-          <?php $connect = new PDO("mysql:host=localhost; dbname=dev;", 'dev', 'devpass');
-          $connect = new PDO("mysql:host=localhost; dbname=dev;", 'dev', 'devpass');
-          $sql1="SELECT SUM(`vote`) AS `somme_votepositif` FROM `vote` WHERE `acteur_id` = :acteur_id AND `vote` = '1'  ";
-          $sql2="SELECT SUM(`vote`) AS `somme_votenegatif` FROM `vote` WHERE `acteur_id` = :acteur_id AND `vote` = '-1'  ";
-          $statement1=$connect->prepare($sql1);
-          $statement2=$connect->prepare($sql2);
+          <?php 
+          $sql1="SELECT COUNT(*) AS `somme_votepositif` FROM `vote` WHERE `acteur_id` = :acteur_id AND `vote` = '1'  ";
+          $sql2="SELECT COUNT(*) AS `somme_votenegatif` FROM `vote` WHERE `acteur_id` = :acteur_id AND `vote` = '-1'  ";
+          $statement1=$conn->prepare($sql1);
+          $statement2=$conn->prepare($sql2);
           $statement1->bindParam('acteur_id', $acteur_id);
           $statement1->execute();
           $row3 = $statement1->fetch() ;
@@ -57,11 +56,19 @@
 
 
                 $somme_votepositif = $row3['somme_votepositif'];
-                $somme_votenegatif = -$row2['somme_votenegatif'];
+                $somme_votenegatif = $row2['somme_votenegatif'];
                 
                 ?>
-                
-                 
+                <?php
+                            $sqlrequest="SELECT post.post, post.acteur_id, post.user_id, post.date_add, account.account_id, account.username FROM `post` INNER JOIN account ON post.user_id=account.account_id 
+                            WHERE `acteur_id` = :acteur_id
+                            ";
+                            $stat = $conn->prepare($sqlrequest);
+                            $stat->bindParam('acteur_id',$acteur_id);
+                            $stat->execute(); 
+                            
+                            ?>
+
                 <div class ="acteur">
                     <div class ="acteur_logo">
 
@@ -74,17 +81,28 @@
 
                     <div class = "acteur_corps">
                         <div class ="acteur_titre">
-                            <h3><?php echo htmlspecialchars($row['acteur_name']); ?></h3>
+                            <h3>Commentaires</h3>
                         </div>
                         <div class ="acteur_description">
-                            <?php echo $acteur_description_encode; ?> 
+                        <?php while ( $row4 = $stat->fetch(PDO::FETCH_ASSOC))  :
+                        $post = $row4['post'] ;
+                        $date = $row4['date_add'];
+                        $username = $row4['username']; ?>
+                        
+                            <div><?php echo $date;  ?>   </div>
+                           <div> <?php echo $post; ?></div>
+                            <div><?php echo $username; ?></div>
+                            
+
+                           <?php endwhile; ?>
+                        
                          </div>
                     </div>
                     <div class ="acteur_button">
                         <button class ="acteur_button_click" onclick="window.location.href=<?php echo $url_commentaire_acteur?>">Je donne mon avis</button>
                     </div>
                 </div>
-           
+               
                 
 
         </div>

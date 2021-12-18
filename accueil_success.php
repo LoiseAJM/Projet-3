@@ -1,11 +1,12 @@
 <html>
     <head>
-        <meta charset="iso-8859-15">
-        <title>GBAF</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Présentation de la GBAF</title>
         <link rel="stylesheet" href="style.css">
         <!--Favicon-->
         <link  rel="icon" type="image" href="images/favicon-gbaf.png" />
-        <meta charset="utf-8">
+        
 
     </head>
     <body>   
@@ -51,7 +52,7 @@
           <?php $acteur_description = substr($row['acteur_description'],0,150) . "..." ; 
           $acteur_description_encode = utf8_encode($acteur_description);
           $acteur_id=$row['acteur_id'];
-          $url_acteur='\'presentation_acteur.php?id=' . $acteur_id . '\'';
+          $url_acteur='presentation_acteur.php?id=' . $acteur_id ;
           
           ?> 
                 <div class ="acteur">
@@ -68,7 +69,7 @@
                          </div>
                     </div>
                     <div class ="acteur_button">
-                        <button class ="acteur_button_click" onclick="window.location.href=<?php echo $url_acteur; ?>">Lire la suite</button>
+                        <a class ="acteur_button_click" href="<?php echo $url_acteur; ?>">Lire la suite</a>
                     </div>
                 </div>
                     <?php endwhile; ?>
