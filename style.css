@@ -3,16 +3,19 @@
     margin: 0;
     padding: 0;
     }
-
-
-body
-{
+header{
+    color: black;
+    border-bottom: 2px solid black ;
+}
+h3{display:inline}
+.aligne_a_droite{ float:right;}
+body{
     font-family:  Helvetica,sans-serif;
     background-image: linear-gradient( #fdfbfb 0%, #ebedee 100%); 
     font-size: medium;
 }
 
-footer {
+footer{
     position:fixed;
     bottom: 0;
     width: 100%;
@@ -20,25 +23,17 @@ footer {
     color: white;
     text-align: center;
     height: 5%;
-  }
-.page 
-{
-margin-bottom: 5%;
 }
- header 
-{
-    color: black;
-    border-bottom: 2px solid black ;
-
+.page{
+    margin-bottom: 5%;
 }
 
-a 
-{
+
+a{
     color: black;
     text-decoration: underline;   
 }
-a:hover
-{
+a:hover{
     color: grey;
     text-decoration: underline;   
 }
@@ -81,8 +76,9 @@ form {
     box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
     border-radius: 0px;
 }
-.boxed_80
-{   width: 80%;
+
+.boxed_80{   
+    width: 80%;
     margin-left: auto;
     margin-right: auto;
     margin-top: 30px;
@@ -93,83 +89,180 @@ form {
     box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
     border-radius: 0px;
 }
-#acteurs_liste
-{
-    margin-left: auto;
-    margin-right: auto;
 
-    padding: 0.5%;
-}
-.acteur
-{
-    background-color: rgba(211, 211, 211, 0.596);
-    display: inline-flex;
-    border: 1px solid black;
-    padding: 5px;
-    margin : 5px;
-    max-width: 100%;
 
-}
-.image_logo
+@media only screen and (min-width: 768px) {
+    /* tablettes et ordinateurs */
+    .acteur{
+        background-color: rgba(211, 211, 211, 0.596);
+        display: inline-flex;
+        
+        padding: 5px;
+        margin : 5px;
+        max-width: 100%;
+
+    }
+    
+    .acteur_logo{
+        width: 20%;
+        position : relative;
+    }
+    .acteur_corps{
+        width: 65%;
+        margin-right: 2%;
+        margin-left: 2%;
+    }
+    .acteur_button{
+        width: 15%;
+        position : relative;
+    }
+    .acteur_button_click
+    {   background:    #ff0000;
+        border-radius: 11px;
+        padding:       20px 45px;
+        color:         #ffffff;
+        display:       inline-block;
+        font:          normal bold  "Open Sans", sans-serif;
+        text-align:    center;
+    }
+    .acteur_button_click_mobile
+    {   background:    #ff0000;
+        border-radius: 11px;
+        padding:       20px 45px;
+        color:         #ffffff;
+        display:       inline-block;
+        font:          normal bold "Open Sans", sans-serif;
+        text-align:    center;
+    }
+    .image_logo
 {
     max-width: 100%;
     max-height: 100%;
     margin-right: auto;
     margin-left: auto;
-}
+    width: 40%;
     
+}
+.compteur_vote
+{ 
+    font-size: 4em;
+    color: #000000;
+    font-weight: 700;
 
-.acteur_logo
+
+
+}
+.pouce
 {
-    width: 20%;
-    position : relative;
+    max-width: 100%;
+    max-height: 100%;
+    width: 40%;
+}
+}
+
+@media only screen and (max-width: 767px) {
+        /* smartphone */
+        .pouce
+{
+    max-width: 100%;
+    max-height: 100%;
+    width: 40%;
+    max-width: 100px;
+}
+        .image_logo
+        {
+            max-width: 100%;
+            max-height: 100%;
+            margin-right: auto;
+            margin-left: auto;
+        }
+        .compteur_vote
+{ 
+    font-size: 4em;
+    color: #000000;
+    font-weight: 700;
+    display: inline-flex;
+
 
 }
-.acteur_corps
-{width: 65%;
-margin-right: 2%;
-margin-left: 2%;
-}
-.acteur_button
-{width: 15%;
-position : relative;
-}
+
 .acteur_button_click
-{   background-color:#ff0000;
-	border-radius:8px;
-	border:1px solid #ab1919;
-	display:inline-block;
-	cursor:pointer;
-	color:#ffffff;
-	font-family:Arial;
-
-	text-decoration:none;
-	text-shadow:0px 1px 0px #000000;
-    
-   
+{ background:    #ff0000;
+    border-radius: 11px;
+    padding:       2% 5%;
+    color:         #ffffff;
+    display:       inline-block;
+    font:          normal bold "Open Sans", sans-serif;
+    text-align:    center;
 
 }
+.acteur_button_click_mobile
+{  background:    #ff0000;
+    border-radius: 11px;
+    padding:       2% 5%;
+    color:         #ffffff;
+    display:       inline-block;
+    font:          normal bold "Open Sans", sans-serif;
+    text-align:    center;
+
+}
+
+    .acteur
+    {
+        background-color: rgba(211, 211, 211, 0.596);
+        display: block;
+        padding: 5px;
+        margin : 5px;
+        max-width: 100%;
+    
+    }
+    
+    .acteur_logo
+    {
+        position : relative;
+
+    }
+    .acteur_corps
+    {
+    margin-right: 2%;
+    margin-left: 2%;
+    }
+    .acteur_button
+    {position : relative;
+    margin: auto;
+    }
+
+
+.flottant_gauche
+{float: left;
+
+}
+        }
 
 .button_click
-{   background-color:#ff0000;
-	border-radius:8px;
-	border:1px solid #ab1919;
-	display:inline-block;
-	cursor:pointer;
-	color:#ffffff;
-	font-family:Arial;
-
-	text-decoration:none;
-	text-shadow:0px 1px 0px #000000;
+{  
+    display:inline-block;
+    cursor:pointer;
+   
     width: 20%;
     height: 4em;
 
 }
+    
+
+
+
+
+
 .width85
 {
     min-width:85%;
 }
 .acteur_button_click:hover
+{
+    background-color:#bd2a2a;
+}
+.acteur_button_click_mobile:hover
 {
     background-color:#bd2a2a;
 }
@@ -227,13 +320,7 @@ h1
 {
     text-align: center;
 }
-.compteur_vote
-{ 
-    font-size: 4em;
-    color: #000000;
-    font-weight: 700;
 
-}
 .div_centered
 {margin-left: auto;
 margin-right: auto;}
@@ -293,7 +380,9 @@ margin-right: auto;}
     bottom: 0.5em;
     right : 30px;
 }
-.wrapper 
-{
-    display: grid;
-  }
+.bold{
+    font-weight: bold;
+}
+.italique{
+    font-style: italic;
+}

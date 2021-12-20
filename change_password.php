@@ -12,7 +12,7 @@
     <?php require 'header.php'; ?>
 
     <!--Formulaire de changement de mot de passe -->
-    <form method="post" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']);?>"> 
+    <form id="change_password" method="post" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']);?>"> 
         <h1>
             Changer le mot de passe
         </h1>

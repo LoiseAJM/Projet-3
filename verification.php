@@ -28,8 +28,7 @@
        $account_id= $row['account_id'];
        $username=$row['username'];
 
-       
-           if(empty ($username))
+           if(empty ($username)) //l'username n'existe pas dans la db
                {
                session_destroy();
                require 'header.php';
@@ -39,7 +38,7 @@
                }
            else 
                {
-               if (password_verify($motdepasseconnexion, $password))
+               if (password_verify($motdepasseconnexion, $password)) //si le mot de passe est correct
                    {
                     $_SESSION['prenomnom'] = $prenom . ' ' . $nom;
                     $_SESSION['account_id'] =  $account_id;
