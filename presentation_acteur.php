@@ -10,6 +10,12 @@
     </head>
 
     <body> 
+    <?php if(empty ($_SESSION['prenomnom'])) //l'utilisateur n'est pas connecté
+               {
+               session_destroy();
+               header('Location: login.php');
+               }
+               ?>
     <?php require 'header.php'; ?>
         <div class="page">
             <!--On récupère l'ID de l'acteur dans l'URL-->
@@ -68,16 +74,17 @@
                 $stat->execute(); 
                 
                 ?>
-
+            <?php $adresse = "commentaire_acteur.php?id=" . $acteur_id ;?>
                 <div class="bottom_space">
                         <h3>Commentaires</h3>
                         <div class = "aligne_a_droite">
-                            <button>
+                            <button a href="commentaire_acteur.php"class="bouton_pouce">
                                 <?php echo $somme_votepositif ?> 👍
-                                <?php echo " "?><?php echo $somme_votenegatif ?> 👎 
                             </button>
-                            <button>
-                                Nouveau commentaire
+                            <button a href="commentaire_acteur.php" class="bouton_pouce">
+                            <?php echo " "?><?php echo $somme_votenegatif ?> 👎 
+                            </button>
+                            <input type="button" onclick="window.location.href = $adresse" value="Nouveau commentaire"/>
                             </button>
                         </div>
                 </div>

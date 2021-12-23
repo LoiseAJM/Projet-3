@@ -16,10 +16,8 @@
             require 'accueil_success.php';
             }
             else
-            { 
-            require 'header.php'; 
-            require 'connexion.php';
-            require 'footer.php' ;  }
+            {  
+            require 'connexion.php'; }
             ?>
 
         </body>

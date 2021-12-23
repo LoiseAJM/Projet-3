@@ -134,5 +134,7 @@ function verification_formulaire_inscription(e)
         }
     }
 
-formulaire_password_change.addEventListener('submit', verification_formulaire_inscription);
+formulaire_vote_positif.addEventListener('submit', verification_formulaire_inscription);
+
+fu
     

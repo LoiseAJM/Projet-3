@@ -9,6 +9,14 @@
         <link rel="icon" type="image" href="images/favicon-gbaf.png" />
     </head>
     <body>
+
+    <?php if ((isset ($_SESSION['prenomnom'] )))
+            { 
+     
+            require 'accueil_success.php';
+            }
+            else
+            {  ?>
     <?php require 'header.php'; ?>
 
     <!--Formulaire de changement de mot de passe -->
@@ -72,5 +80,8 @@
 
     ?>
     <?php require 'footer.php'; ?>
+    
+    <?php };
+            ?>
     </body>
 </html>

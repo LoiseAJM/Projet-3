@@ -12,9 +12,16 @@
         
     </head>
     <body>
+
+    <?php if(empty ($_SESSION['prenomnom'])) //l'utilisateur n'est pas connecté
+               {
+               session_destroy();
+               
+               }
+               ?>
         <!--Appel du header-->
         <?php require 'header.php'; ?>
-        
+       
         <!--On récupère l'ID de l'acteur dans l'URL-->
         <?php $acteur_id= $_GET['id']; ?>
 

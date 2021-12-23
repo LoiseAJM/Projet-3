@@ -6,10 +6,16 @@
         <link rel="stylesheet" href="style.css">
         <!--Favicon-->
         <link  rel="icon" type="image" href="images/favicon-gbaf.png" />
-        
-
     </head>
-    <body>   
+    <body>
+    <?php 
+    if(empty ($_SESSION['prenomnom'])) //l'utilisateur n'est pas connecté
+               {
+               header('Location: login.php');
+               }
+               ?>
+
+
         <?php require 'header.php'; ?>
 
         
