@@ -4,12 +4,12 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Mentions légales</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/style.css">
     <!--Favicon-->
     <link rel="icon" type="image" href="images/favicon-gbaf.png" />
 </head>
            <!--Appel du header-->
-           <?php require 'header.php'; ?>
+           <?php require '_header.php'; ?>
            <div class="container">
                
                <h1>Mentions légales </h1>
@@ -222,6 +222,6 @@
                 Tout litige en relation avec l’utilisation du site <a href="http://gbaf-p3.com">http://gbaf-p3.com</a> est soumis au droit français. 
                 En dehors des cas où la loi ne le permet pas, il est fait attribution exclusive de juridiction aux tribunaux compétents de Paris</p>
              </div>
-            <?php require 'footer.php'; ?>
+            <?php require '_footer.php'; ?>
 
             </html>

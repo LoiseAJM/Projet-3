@@ -4,13 +4,13 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Inscription</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/style.css">
     <!--Favicon-->
     <link rel="icon" type="image" href="images/favicon-gbaf.png" />
 </head>
     <body>
         <!--Appel du header-->
-        <?php require 'header.php'; ?>
+        <?php require '_header.php'; ?>
                 <!--Formulaire-->
                 <form id="formulaire_inscription" method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>"> 
                     <h1 id="titre_formulaire">
@@ -119,6 +119,6 @@
         ?>
 
 
-<script type="text/javascript" src="monscript.js"></script>
+<script type="text/javascript" src="js/monscript.js"></script>
     </body>
 </html>

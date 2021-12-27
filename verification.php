@@ -4,11 +4,19 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Vérification</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/style.css">
     <!--Favicon-->
     <link rel="icon" type="image" href="images/favicon-gbaf.png" />
 </head>  
-<!--Utilisateur connecté-->
+<!--Si l'utilisateur est connecté-->
+<?php if ((isset ($_SESSION['prenomnom'] )))
+            { 
+     
+            require 'accueil_success.php';
+            }
+?>
+
+<!--Utilisateur non connecté-->
     <?php
       {
         if ($_SERVER["REQUEST_METHOD"] == "POST") 
@@ -31,10 +39,10 @@
            if(empty ($username)) //l'username n'existe pas dans la db
                {
                session_destroy();
-               require 'header.php';
+               require '_header.php';
                require 'connexion.php' ;
                echo "<div class='centered redbold'>Identifiant inconnu<div>";
-               require 'footer.php';
+               require '_footer.php';
                }
            else 
                {
@@ -43,17 +51,12 @@
                     $_SESSION['prenomnom'] = $prenom . ' ' . $nom;
                     $_SESSION['account_id'] =  $account_id;
                     $_SESSION['username'] = $username;
-
-
-                    echo '<meta http-equiv="refresh" content="0;accueil_success.php">' ;
-                    
+                    header('Location : accueil_success.php');                  
                    }
                 else
-                   {   
-                    require 'header.php';
+                   {
                     require 'connexion.php' ;
                     echo "<div class='centered redbold'>Mot de passe incorrect<div>";
-                    require 'footer.php';
                    } 
 
                 }

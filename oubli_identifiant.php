@@ -3,12 +3,12 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Oubli d'identifiant</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/style.css">
     <!--Favicon-->
     <link rel="icon" type="image" href="images/favicon-gbaf.png" />
 </head>
     <body>
-        <?php require 'header.php'; ?>
+        <?php require '_header.php'; ?>
         <!--Clos la session ouverte dans le header-->
         <?php session_destroy(); ?>
         <form method="post" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']);?>"> 
@@ -52,6 +52,6 @@
             echo '<meta http-equiv="refresh" content="0;redirection_recuperation_identifiant.php">' ;
             }
         } ?>
-        <?php require 'footer.php'; ?>
+        <?php require '_footer.php'; ?>
     </body>
 </html>

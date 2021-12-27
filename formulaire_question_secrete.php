@@ -4,12 +4,12 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Formulaire question secrète</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/style.css">
     <!--Favicon-->
     <link rel="icon" type="image" href="images/favicon-gbaf.png" />
 </head>
     <body>
-    <?php require 'header.php'; ?>
+    <?php require '_header.php'; ?>
     <form method="post" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']);?>"> 
             <h1>
                 J'ai oublié mon mot de passe
@@ -32,6 +32,6 @@
         }
 
     ?>
-    <?php require 'footer.php'; ?>
+    <?php require '_footer.php'; ?>
     </body>
 </html>

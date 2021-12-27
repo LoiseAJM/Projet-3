@@ -14,7 +14,7 @@ if(session_id() == '') {
 <head>
         <meta charset="utf-8">
         <title>GBAF</title>
-        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="css/style.css">
         <!--Favicon-->
         <link rel="icon" type="image" href="images/favicon-gbaf.png" />
 

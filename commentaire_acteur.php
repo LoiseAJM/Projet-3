@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <title>Commentaire acteurs</title>
-        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="css/style.css">
         <!--Favicon-->
         <link rel="icon" type="image" href="images/favicon-gbaf.png" />
 
@@ -20,7 +20,7 @@
                }
                ?>
         <!--Appel du header-->
-        <?php require 'header.php'; ?>
+        <?php require '_header.php'; ?>
        
         <!--On récupère l'ID de l'acteur dans l'URL-->
         <?php $acteur_id= $_GET['id']; ?>
@@ -132,7 +132,7 @@
 
         ?>
 
-<?php require "footer.php"?>
-<script type="text/javascript" src="monscript.js"></script>
+<?php require "_footer.php"?>
+<script type="text/javascript" src="js/monscript.js"></script>
     </body>
 </html>

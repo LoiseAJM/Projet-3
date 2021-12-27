@@ -3,7 +3,7 @@
             <meta charset="utf-8">
             <meta name="viewport" content="width=device-width, initial-scale=1">
             <title>Connexion</title>
-            <link rel="stylesheet" href="style.css">
+            <link rel="stylesheet" href="css/style.css">
             <!--Favicon-->
             <link rel="icon" type="image" href="images/favicon-gbaf.png" />
     </head>
@@ -16,7 +16,7 @@
             }
             else 
             { ?>
-        <?php require 'header.php'?>
+        <?php require '_header.php'?>
         <form method="post" action="<?php echo htmlspecialchars("verification.php");?>"> 
 
             <h1 id="connexion">
@@ -43,7 +43,7 @@
                 <a href="redirection_probleme_connexion.php">Je n'arrive pas à me connecter</a>
             </div>
         </form>
-        <?php require 'footer.php'?>
+        <?php require '_footer.php'?>
         <?php };?>
     </body>
 </html>

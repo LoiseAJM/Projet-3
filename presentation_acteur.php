@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Présentation acteur</title>
-        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="css/style.css">
         <!--Favicon-->
         <link rel="icon" type="image" href="images/favicon-gbaf.png" />
     </head>
@@ -13,10 +13,10 @@
     <?php if(empty ($_SESSION['prenomnom'])) //l'utilisateur n'est pas connecté
                {
                session_destroy();
-               header('Location: login.php');
+               header('Location: index.php');
                }
                ?>
-    <?php require 'header.php'; ?>
+    <?php require '_header.php'; ?>
         <div class="page">
             <!--On récupère l'ID de l'acteur dans l'URL-->
             <?php 
@@ -84,9 +84,10 @@
                             <button a href="commentaire_acteur.php" class="bouton_pouce">
                             <?php echo " "?><?php echo $somme_votenegatif ?> 👎 
                             </button>
-                            <input type="button" onclick="window.location.href = $adresse" value="Nouveau commentaire"/>
-                            </button>
+                            <div id="commentaire" class ="bouton_pouce">Nouveau commentaire </a>
+                            </div>
                         </div>
+                        <div id="text_info">erreur</div>
                 </div>
 
                 <div>
@@ -110,6 +111,7 @@
                 </div>
             </div>
         </div>
-    <?php require 'footer.php'; ?>
+    <?php require '_footer.php'; ?>
+    <script type="text/javascript" src="js/monscript.js"></script>
     </body>
 </html>

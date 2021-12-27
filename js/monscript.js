@@ -134,7 +134,8 @@ function verification_formulaire_inscription(e)
         }
     }
 
-formulaire_vote_positif.addEventListener('submit', verification_formulaire_inscription);
+document.getElementById("commentaireee").addEventListener("click", clickCommentaire);
 
-fu
-    
+function clickCommentaire() {
+    document.getElementById("text_info").textContent="bonjour";
+}
