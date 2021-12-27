@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <html>
 <head>
     <meta charset="utf-8">
@@ -13,7 +14,7 @@
                header('Location: index.php');
                }
                ?>
-               
+
 <meta http-equiv="refresh" content="4;accueil_success.php">
 <?php require '_header.php'; ?>
 <div class="boxed">

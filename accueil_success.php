@@ -1,4 +1,4 @@
-<s?php ession_start(); ?>
+<?php session_start(); ?>
 <html>
     <head>
         <meta charset="utf-8">
@@ -9,13 +9,12 @@
         <link  rel="icon" type="image" href="images/favicon-gbaf.png" />
     </head>
     <body>
-
     <!-- L'utilisateur n'est pas connecté  -->
     <?php 
-        if(empty ($_SESSION['prenomnom']){
+        if(empty ($_SESSION['prenomnom'])){
                 header('Location: index.php');
             }?>
-            
+
     <!-- L'utilisateur est connecté  -->
     <?php require '_header.php'; ?>
 
