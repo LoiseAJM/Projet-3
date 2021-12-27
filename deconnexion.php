@@ -6,11 +6,11 @@
     <!--Favicon-->
     <link rel="icon" type="image" href="images/favicon-gbaf.png" />
 </head>
-
 <body>
+
+<!-- Destruction de la session et redirection vers l'index -->
 <?php session_start(); ?>
 <?php session_destroy();?>
-<meta http-equiv="refresh" content="0;index.php">
+<?php header('Location: index.php');}?>
 
-</head>
 </body>

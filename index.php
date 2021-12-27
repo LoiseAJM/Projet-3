@@ -12,12 +12,12 @@
 
     <body> <?php if ((isset ($_SESSION['prenomnom'] )))
             { 
-     
-            require 'accueil_success.php';
+                header('Location: accueil_success.php');
             }
             else
             {  
-            require 'connexion.php'; }
+                header('Location: connexion.php');
+            }
             ?>
 
         </body>

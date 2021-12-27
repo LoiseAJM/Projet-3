@@ -8,31 +8,33 @@
         <!--Favicon-->
         <link rel="icon" type="image" href="images/favicon-gbaf.png" />
     </head>
+    
+     <!-- Si l'utilisateur est connecté -->
+     <?php
+        if(isset ($_SESSION['prenomnom'])){
+            header('Location: accueil_success.php');
+        }?>
+
     <body>
 
-    <?php if ((isset ($_SESSION['prenomnom'] )))
-            { 
-     
-            require 'accueil_success.php';
-            }
-            else
-            {  ?>
-    <?php require '_header.php'; ?>
+        <!-- L'utilisateur n'est pas connecté -->
 
-    <!--Formulaire de changement de mot de passe -->
-    <form id="change_password" method="post" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']);?>"> 
-        <h1>
-            Changer le mot de passe
-        </h1>
-        <br>
-        <div>
-            <label for="newpassword"> Nouveau mot de passe : </label>
-            <input type="password" name="newpassword" placeholder="Nouveau mot de passe">
-            <label for="newpassword_confirm"> Confirmer le mot de passe : </label>
-            <input type="password" name="newpassword_confirm" placeholder="Confirmer le mot de passe">
-            <input type="submit" value="Envoyer"/>
-        </div>
-    </form>
+        <?php require '_header.php'; ?>
+
+        <!--Formulaire de changement de mot de passe -->
+        <form id="change_password" method="post" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']);?>"> 
+            <h1>
+                Changer le mot de passe
+            </h1>
+            <br>
+            <div>
+                <label for="newpassword"> Nouveau mot de passe : </label>
+                <input type="password" name="newpassword" placeholder="Nouveau mot de passe">
+                <label for="newpassword_confirm"> Confirmer le mot de passe : </label>
+                <input type="password" name="newpassword_confirm" placeholder="Confirmer le mot de passe">
+                <input type="submit" value="Envoyer"/>
+            </div>
+        </form>
  
      <?php   
         if ($_SERVER["REQUEST_METHOD"] == "POST")
@@ -45,8 +47,10 @@
                     //Vérification que le mot de passe est sécurisé
                     if (strlen($newpassword)>7)
                     {//Remplacement du mot de passe dans la DB
-                        {try   
-                            { $conn = new PDO("mysql:host=localhost; dbname=dev;", 'dev', 'devpass');
+                        {
+                            try   
+                            { 
+                            $conn = new PDO("mysql:host=localhost; dbname=dev;", 'dev', 'devpass');
                             $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
                             $sql="UPDATE `account` SET `password`= :newpassword WHERE `account_id`= :identifiant  ";
                             $newpasswordsecure = password_hash($newpassword, PASSWORD_DEFAULT); 
@@ -80,8 +84,5 @@
 
     ?>
     <?php require '_footer.php'; ?>
-    
-    <?php };
-            ?>
     </body>
 </html>

@@ -8,15 +8,14 @@
             <link rel="icon" type="image" href="images/favicon-gbaf.png" />
     </head>
     <body>
+        <!-- Redirection si l'utilisateur est déjà connecté -->
+        <?php
+            if(isset ($_SESSION['prenomnom'])){
+                header('Location: accueil_success.php');
+        }?>
 
-    <?php if ((isset ($_SESSION['prenomnom'] )))
-            { 
-     
-            require 'accueil_success.php';
-            }
-            else 
-            { ?>
         <?php require '_header.php'?>
+
         <form method="post" action="<?php echo htmlspecialchars("verification.php");?>"> 
 
             <h1 id="connexion">
@@ -44,7 +43,6 @@
             </div>
         </form>
         <?php require '_footer.php'?>
-        <?php };?>
     </body>
 </html>
         

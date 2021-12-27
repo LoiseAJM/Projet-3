@@ -11,14 +11,13 @@
 
         
     </head>
+    <!-- L'utilisateur n'est pas connecté  -->
+    <?php 
+    if(empty ($_SESSION['prenomnom'])){
+        session_destroy();
+    }?>
     <body>
 
-    <?php if(empty ($_SESSION['prenomnom'])) //l'utilisateur n'est pas connecté
-               {
-               session_destroy();
-               
-               }
-               ?>
         <!--Appel du header-->
         <?php require '_header.php'; ?>
        

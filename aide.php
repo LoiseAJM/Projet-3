@@ -1,6 +1,4 @@
 <html>
-
-
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -10,33 +8,28 @@
         <link rel="icon" type="image" href="images/favicon-gbaf.png" />
     </head>
 
-    <body>
+    <!-- Si l'utilisateur est connecté -->
     <?php    
-   if(!empty ($_SESSION['prenomnom'])) //l'utilisateur est pas connecté
-               {
-          header('Location: accueil_success.php');
-               }
-               ?>
+   if(isset ($_SESSION['prenomnom'])){
+    header('Location: accueil_success.php');
+    }
+    ?>  
 
-             <!--Appel du header-->
-            <?php require '_header.php'; ?>
-            
-            <div class="formulaire">
-                
-                <form>
-                <h1 id="connexion">
-                    Comment pouvons-nous vous aider ?
-                </h1>
-                
-                    <div class="centered"><a href="inscription.php">Je n'ai pas encore de compte</a>
-                    <div class="centered"><a href="#">Je n'arrive pas à me connecter</a>
-                    </div>
-                </form>
-            </div> 
-            
+    <body>
+        <!-- Appel du header -->
+        <?php require '_header.php'; ?>
 
-            <!--Appel du footer-->
-            <?php require '_footer.php' ; ?>            
-        </body>
+        <!-- Formulaire -->
+        <form>
+            <h1 id="connexion">
+                Comment pouvons-nous vous aider ?
+            </h1>
+            <div class="centered"><a href="inscription.php">Je n'ai pas encore de compte</a></div>
+            <div class="centered"><a href="#">Je n'arrive pas à me connecter</a></div>
+        </form>
+
+        <!--Appel du footer-->
+        <?php require '_footer.php' ; ?>            
+    </body>
 
 </html>

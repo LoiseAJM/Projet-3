@@ -8,6 +8,13 @@
     <!--Favicon-->
     <link rel="icon" type="image" href="images/favicon-gbaf.png" />
 </head>
+    <!-- Si l'utilisateur est connecté  -->
+    <?php
+        if(isset ($_SESSION['prenomnom'])){
+            header('Location: accueil_success.php');
+            }
+    ?>
+
     <body>
     <?php require '_header.php'; ?>
     <form method="post" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']);?>"> 

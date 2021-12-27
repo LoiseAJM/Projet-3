@@ -7,6 +7,12 @@
     <!--Favicon-->
     <link rel="icon" type="image" href="images/favicon-gbaf.png" />
 </head>
+ <!-- Si l'utilisateur est connecté  -->
+ <?php
+        if(isset ($_SESSION['prenomnom'])){
+            header('Location: accueil_success.php');
+            }
+    ?>
 <?php require '_header.php'; ?>
 <div class="boxed">
 <p> Votre identifiant est : <bold class="redbold"> <?php echo $_SESSION['identifiant']?></bold> </p>

@@ -7,6 +7,12 @@
     <!--Favicon-->
     <link rel="icon" type="image" href="images/favicon-gbaf.png" />
 </head>
+ <!-- Si l'utilisateur est connecté  -->
+ <?php
+        if(isset ($_SESSION['prenomnom'])){
+            header('Location: accueil_success.php');
+            }
+    ?>
 <meta http-equiv="refresh" content="4;inscription.php">
 <?php require '_header.php'; ?>
 <div class="boxed">

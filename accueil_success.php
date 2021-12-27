@@ -9,16 +9,16 @@
         <link  rel="icon" type="image" href="images/favicon-gbaf.png" />
     </head>
     <body>
-    <?php    
-   if(empty ($_SESSION['prenomnom'])) //l'utilisateur n'est pas connecté
-               {
-          header('Location: index.php');
-               }
-               ?>
 
-        <?php require '_header.php'; ?>
+    <!-- L'utilisateur n'est pas connecté  -->
+    <?php 
+        if(empty ($_SESSION['prenomnom']){
+                header('Location: index.php');
+            }?>
+            
+    <!-- L'utilisateur est connecté  -->
+    <?php require '_header.php'; ?>
 
-        
     <div class="page">
         <div class="conteneur">
             <!--Section présentation -->
