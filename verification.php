@@ -8,13 +8,12 @@
     <!--Favicon-->
     <link rel="icon" type="image" href="images/favicon-gbaf.png" />
 </head>  
-<!--Si l'utilisateur est connecté-->
-<?php if ((isset ($_SESSION['prenomnom'] )))
-            { 
-     
-            require 'accueil_success.php';
+ <!-- Si l'utilisateur est connecté  -->
+ <?php
+        if(isset ($_SESSION['prenomnom'])){
+            header('Location: accueil_success.php');
             }
-?>
+    ?>
 
 <!--Utilisateur non connecté-->
     <?php
@@ -51,10 +50,10 @@
                     $_SESSION['prenomnom'] = $prenom . ' ' . $nom;
                     $_SESSION['account_id'] =  $account_id;
                     $_SESSION['username'] = $username;
-                    header('Location : accueil_success.php');                  
+                    header('Location: accueil_success.php');               
                    }
                 else
-                   {
+                   {session_destroy();
                     require 'connexion.php' ;
                     echo "<div class='centered redbold'>Mot de passe incorrect<div>";
                    } 

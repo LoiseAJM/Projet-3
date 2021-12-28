@@ -35,11 +35,11 @@
             <div>
                 <input type ="submit" value ="Envoyer"/><br><br>
             </div>
-            <div class="centered">
+            <div class="centered underline">
                 <a href="inscription.php">Je n'ai pas encore de compte</a>
             </div>
             <br>
-            <div class="centered">
+            <div class="centered underline">
                 <a href="redirection_probleme_connexion.php">Je n'arrive pas à me connecter</a>
             </div>
         </form>

@@ -6,7 +6,7 @@ let f_passwordconfirm = document.getElementById("f_passwordconfirm");
 let f_questionsecrete = document.getElementById("f_questionsecrete");
 let f_reponse = document.getElementById("f_reponse");
 let name_validation = /^[\w'\-,.][^0-9_!¡?÷?¿/\\+=@#$%ˆ&*(){}|~<>;:[\]]{2,}$/;
-let password_validation =/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$/;
+let password_validation =/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d\w\W]{8,}$/ ;
 let nom_erreur = document.getElementById("nom_erreur");
 let prenom_erreur = document.getElementById('prenom_erreur');
 let username_erreur = document.getElementById('username_erreur');
