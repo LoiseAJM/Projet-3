@@ -21,7 +21,8 @@
             <!--On récupère l'ID de l'acteur dans l'URL-->
             <?php 
                 $acteur_id= $_GET['id'];
-                $url_commentaire_acteur='\'commentaire_acteur.php?id=' . $acteur_id . '\'';
+                
+               // \'';
             ?>
             <!-- Connexion à la BDD pour récupérer les infos acteur-->
             <?php
@@ -78,16 +79,17 @@
                 <div class="bottom_space">
                         <h3>Commentaires</h3>
                         <div class = "aligne_a_droite">
-                            <button a href="commentaire_acteur.php"class="bouton_pouce">
+
+                            <button id="pos" class="bouton_pouce" type="button" onclick="loadd(1)">
                                 <?php echo $somme_votepositif ?> 👍
                             </button>
-                            <button a href="commentaire_acteur.php" class="bouton_pouce">
+                            <button id="neg" class="bouton_pouce" type="button" onclick="loadd(-1)">
                             <?php echo " "?><?php echo $somme_votenegatif ?> 👎 
                             </button>
-                            <div id="commentaire" class ="bouton_pouce">Nouveau commentaire </a>
+                            <a href="commentaire_acteur.php?id=<?php echo($acteur_id) ;?>" > <div id="commentaire" class ="bouton_pouce">Nouveau commentaire </a>
                             </div>
                         </div>
-                        <div id="text_info">erreur</div>
+                        <!-- <div id="text_info">erreur</div> -->
                 </div>
 
                 <div>
@@ -112,6 +114,39 @@
             </div>
         </div>
     <?php require '_footer.php'; ?>
-    <script type="text/javascript" src="js/monscript.js"></script>
+    <!--<script type="text/javascript" src="js/monscript.js"></script>-->
+
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
+<script type="text/javascript">
+function loadd(vt) {
+    //document.getElementById("pos").value = "haha" 👍 ;
+
+  const xhttp = new XMLHttpRequest();
+  xhttp.onload = function() {
+    myFunction(this);
+    //document.getElementById("formulaire_contenu").innerHTML =
+    //this.responseText;
+
+  }
+
+  const file  = "_ajax_presentation_acteur.php?user_id=" + <?php echo($_SESSION['account_id']);?> + "&acteur_id=" + <?php echo($acteur_id);?> + "&vote=" +vt ;
+  //document.getElementById("text_info").innerHTML = file;
+  xhttp.open("GET",file, true );
+  xhttp.send();
+}
+function myFunction(xml) {
+    const xmlDoc = xml.responseXML;
+  const x = xmlDoc.getElementsByTagName("R");
+  
+  const pos = x[0].getElementsByTagName("T1")[0].childNodes[0].nodeValue;
+  const neg = x[0].getElementsByTagName("T2")[0].childNodes[0].nodeValue;
+  //window.alert("pos:" + pos + "neg" + neg);
+  document.getElementById("pos").innerHTML = pos + "👍" ;
+  document.getElementById("neg").innerHTML = neg + "👎" ;
+  //document.getElementById("text_info").innerHTML = file 👍 ;
+}
+</script>
     </body>
 </html>

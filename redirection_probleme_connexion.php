@@ -17,8 +17,8 @@
 <?php require '_header.php'; ?>
 <div class="boxed">
     <h1 class="centered"> Que se passe-t-il ? </h1><br>
-    <p class="centered"><a href="oubli_identifiant.php">J'ai oublié mon identifiant</a></p><br>
-   <p class="centered"> <a href="oubli_mot_de_passe.php">J'ai oublié mon mot de passe</a></p>
+    <p class="centered underline"><a href="oubli_identifiant.php">J'ai oublié mon identifiant</a></p><br>
+   <p class="centered underline"> <a href="oubli_mot_de_passe.php">J'ai oublié mon mot de passe</a></p>
 </div>
 
 <?php require '_footer.php'; ?>

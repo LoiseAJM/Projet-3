@@ -17,19 +17,19 @@
 
         <?php require '_header.php'?>
 
-        <form method="post" action="<?php echo htmlspecialchars("verification.php");?>"> 
+        <form class="form_style" method="post" action="<?php echo htmlspecialchars("verification.php");?>"> 
 
             <h1 id="connexion">
                 Connexion
             </h1>
             <div>
                 <label for="f_identifiant"> Identifiant :</label>
-                <input type="text" name="f_identifiant" placeholder="Votre identifiant">
+                <input required= "true" type="text" name="f_identifiant" placeholder="Votre identifiant">
             </div>
             
             <div>
                 <label for="f_motdepasseconnexion">Mot de passe :</label>
-                <input type="password" name="f_motdepasseconnexion"placeholder="Votre mot de passe">
+                <input required= "true"  type="password" name="f_motdepasseconnexion"placeholder="Votre mot de passe">
             </div>
 
             <div>

@@ -18,47 +18,35 @@
         <?php require '_header.php'; ?>
         <!--Clos la session ouverte dans le header-->
         <?php session_destroy(); ?>
-        <form method="post" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']);?>"> 
-            <h1>
-                J'ai oublié mon identifiant
-            </h1>
-            <div>
-                <label for="prenom"> Prénom :</label>
-                <input type="text" name="prenom" placeholder="Prénom">
-                <label for="nom"> Nom de famille :</label>
-                <input type="text" name="nom" placeholder="Nom">
-                <input type="submit" value="Envoyer"/>
+
+            <div class="form_style">
+                <h1 class="bottom_space">
+                    J'ai oublié mon identifiant
+                </h1>
+                <div id="formulaire_contenu">
+                    <label for="prenom"> Prénom :</label>
+                    <input id="r_prenom" type="text" name="prenom" placeholder="Prénom">
+                    <label for="nom"> Nom de famille :</label>
+                    <input id="r_nom"  type="text" name="nom" placeholder="Nom">
+                    <button class="acteur_button_click div_centered" type="button" onclick="loadDoc()">Valider</button>
+                </div>
             </div>
-        </form>
 
-        <?php
-    if ($_SERVER["REQUEST_METHOD"] == "POST")
-        {          
-        $nom=htmlentities(trim($_POST['nom']));
-        $prenom=htmlentities(trim($_POST['prenom']));
+<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 
-        //connexion avec la base de données
-        $conn = new PDO("mysql:host=localhost; dbname=dev;", 'dev', 'devpass');
-        $sql="SELECT * FROM `account` WHERE `last_name` = :nom AND `first_name` = :prenom ;";
-        $statement = $conn->prepare($sql);
-        $statement->bindParam('prenom', $prenom);
-        $statement->bindParam('nom', $nom);
-        $statement->execute(); 
-        $row = $statement->fetch() ;
+<script type="text/javascript">
+function loadDoc() {
+  const xhttp = new XMLHttpRequest();
+  xhttp.onload = function() {
+    document.getElementById("formulaire_contenu").innerHTML =
+    this.responseText;
 
-        if($row['username'] == NULL)
-            {  
-            echo "<div class='centered redbold'>Désolé, il n'existe pas de compte à ce nom.</div> 
-            <div class ='centered' > Souhaitez-vous <a href='inscription.php'>créer un compte ?</a> </div>
-            <br><div class ='centered' ><a href='index.php'>Revenir à l'accueil</a> </div>";
-            }
-        else
-            { 
-            session_start();
-            $_SESSION['identifiant'] = $row['username'];
-            echo '<meta http-equiv="refresh" content="0;redirection_recuperation_identifiant.php">' ;
-            }
-        } ?>
-        <?php require '_footer.php'; ?>
+  }
+  xhttp.open("GET", "_ajax_oubli_identifiant.php?r_nom=" + document.getElementById("r_nom").value + "&r_prenom=" + document.getElementById("r_prenom").value);
+  xhttp.send();
+}
+</script>
+
+<?php require '_footer.php'; ?>
     </body>
 </html>

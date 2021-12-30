@@ -134,8 +134,43 @@ function verification_formulaire_inscription(e)
         }
     }
 
-document.getElementById("commentaireee").addEventListener("click", clickCommentaire);
+let formulaire_connexion = document.getElementById("formulaire_connexion");
+let submit_connexion = document.getElementById("submit_connexion");
+let motdepasse_connexion = document.getElementById("motdepasse_connexion");
+let identifiant_connexion = document.getElementById("identifiant_connexion");
+let erreur_identifiant = document.getElementById("erreur_identifiant");
+let erreur_motdepasse = document.getElementById("erreur_motdepasse");
 
-function clickCommentaire() {
-    document.getElementById("text_info").textContent="bonjour";
-}
+formulaire_connexion.addEventListener('submit', verification_formulaire_connexion);
+
+    function verification_formulaire_connexion(e)
+        {         
+            if (motdepasse_connexion.validity.valueMissing) /* Si le champ mot de passe n'est pas renseigné */
+            { 
+                e.preventDefault();
+                erreur_motdepasse.textContent = 'Veuillez renseigner votre nom';
+                erreur_motdepasse.style.color= 'red';
+                
+            } 
+            
+            else
+            {
+                erreur_motdepasse.textContent ='';
+            }
+
+              
+            if (identifiant_connexion.validity.valueMissing) /* Si le champ Identifiant n'est pas renseigné */
+            { 
+                e.preventDefault();
+                identifiant_connexion.textContent = 'Veuillez renseigner votre identifiant';
+                identifiant_connexion.style.color= 'red';
+                
+            } 
+            
+            else
+            {
+                identifiant_connexion.textContent ='';
+            }
+    
+        }
+    

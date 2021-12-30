@@ -20,7 +20,7 @@
         <?php require '_header.php'; ?>
 
         <!-- Formulaire -->
-        <form>
+        <form class="form_style">
             <h1 id="connexion">
                 Comment pouvons-nous vous aider ?
             </h1>

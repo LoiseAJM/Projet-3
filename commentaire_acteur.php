@@ -37,21 +37,10 @@
         ?>
         
                 <!--Formulaire-->
-                <form id="formulaire_inscription" method="post"> 
+                <form class="form_style" id="formulaire_inscription" method="post"> 
                     <h1 id="titre_formulaire">
                     <?php echo $acteur_name ?>
                     </h1>
-                    <div>
-                        <label for="avis">Votre avis sur ce partenaire : </label><br>
-                            <label>
-                                <input type="radio" name="avis" value="1" checked>
-                                <img width="10%" src="images/pouce_haut">
-                            </label>
-                            <label>
-                                <input type="radio" name="avis" value="-1">
-                                <img width="10%" src="images/pouce_bas">
-                            </label>
-                    </div>
                     
                     <div>
                         <label for="commentaire">Commentaire sur ce partenaire : </label>
@@ -70,7 +59,6 @@
             if ($_SERVER["REQUEST_METHOD"] == "POST")
             {
                 $commentaire=htmlentities(trim($_POST['commentaire']));
-                $avis=htmlentities(($_POST['avis']));
                 $account_id = $_SESSION['account_id'];
                 $date = date('Y-m-d H:i:s');
 
@@ -101,18 +89,6 @@
                         $statement->bindParam('commentaire', $commentaire);
                         $statement->execute();
 
-                        
-                        //Exception : Mode Erreur de PDO 
-                        $connexion->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-                        $sql2 = "INSERT INTO `vote`( `user_id`, `acteur_id`, `vote`) 
-                        VALUES ( :account_id, :acteur_id, :avis )";
-                    
-                    // use exec() because no results are returned
-                        $statement=$connexion->prepare($sql2);
-                        $statement->bindParam('account_id', $account_id);
-                        $statement->bindParam('acteur_id', $acteur_id);
-                        $statement->bindParam('avis', $avis);
-                        $statement->execute();
                         echo "<meta http-equiv='refresh' content='0;redirection_merci.php'>";
             
                     } 

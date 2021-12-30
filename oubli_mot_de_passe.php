@@ -18,7 +18,7 @@
         <?php require '_header.php'; ?>
         <!--Clos la session ouverte dans le header-->
         <?php session_destroy(); ?>
-        <form method="post" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']);?>"> 
+        <form class="form_style" method="post" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']);?>"> 
             <h1>
                 J'ai oublié mon mot de passe
             </h1>
