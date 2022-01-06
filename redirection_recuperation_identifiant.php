@@ -21,7 +21,7 @@ if (isset($_SESSION['prenomnom'])) {
     </p>
     <meta http-equiv="refresh" content="5;index.php">
     <?php session_destroy(); ?>
-    <p>Vous allez être redirigé vers la page de connexion dans 5 secondes, si la redirection ne fonctionne pas, cliquez ici : <a href="index.php">Connexion</a></p>
+    <p>Vous allez être redirigé vers la page de connexion dans 5 secondes, si la redirection ne fonctionne pas, cliquez ici : <a href="index.php" class="underline">Connexion</a></p>
     <?php require '_footer.php' ?>
 </div>
 

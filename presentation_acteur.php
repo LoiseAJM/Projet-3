@@ -40,7 +40,7 @@
         ?>
 
         <!-- Partie description de l'acteur -->
-        <div class="boxed_80">
+        <div class="form_style">
             <!-- Logo de l'acteur -->
             <div class="centered bottom_space">
                 <img class="image_logo" src=<?php echo $acteur_logo ?>></img>
@@ -54,7 +54,7 @@
         </div>
 
         <!-- Partie commentaires -->
-        <div class="boxed_80">
+        <div class="form_style">
             <?php
             $sql1 = "SELECT COUNT(*) AS `somme_votepositif` FROM `vote` WHERE `acteur_id` = :acteur_id AND `vote` = '1'  ";
             $sql2 = "SELECT COUNT(*) AS `somme_votenegatif` FROM `vote` WHERE `acteur_id` = :acteur_id AND `vote` = '-1'  ";
@@ -124,18 +124,13 @@
 
     <script type="text/javascript">
         function loadd(vt) {
-            //document.getElementById("pos").value = "haha" 👍 ;
-
             const xhttp = new XMLHttpRequest();
             xhttp.onload = function() {
                 myFunction(this);
-                //document.getElementById("formulaire_contenu").innerHTML =
-                //this.responseText;
 
             }
 
             const file = "_ajax_presentation_acteur.php?user_id=" + <?php echo ($_SESSION['account_id']); ?> + "&acteur_id=" + <?php echo ($acteur_id); ?> + "&vote=" + vt;
-            //document.getElementById("text_info").innerHTML = file;
             xhttp.open("GET", file, true);
             xhttp.send();
         }
@@ -146,10 +141,8 @@
 
             const pos = x[0].getElementsByTagName("T1")[0].childNodes[0].nodeValue;
             const neg = x[0].getElementsByTagName("T2")[0].childNodes[0].nodeValue;
-            //window.alert("pos:" + pos + "neg" + neg);
             document.getElementById("pos").innerHTML = pos + "👍";
             document.getElementById("neg").innerHTML = neg + "👎";
-            //document.getElementById("text_info").innerHTML = file 👍 ;
         }
     </script>
 </body>
