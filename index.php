@@ -10,18 +10,15 @@
     <link rel="icon" type="image" href="images/favicon-gbaf.png" />
 </head>
 
-    <body> <?php if ((isset ($_SESSION['prenomnom'] )))
-            { 
-                header('Location: accueil_success.php');
-            }
-            else
-            {  
-                header('Location: connexion.php');
-            }
-            ?>
+<body> <?php if ((isset($_SESSION['prenomnom']))) {
+            header('Location: accueil_success.php');
+        } else {
+            header('Location: connexion.php');
+        }
+        ?>
 
-        </body>
+</body>
 
-        
-       
+
+
 </html>
