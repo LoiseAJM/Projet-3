@@ -13,8 +13,7 @@
 
     $identifiant = htmlentities(trim($_GET['f_identifiant']));
     $motdepasseconnexion = htmlentities(trim($_GET['f_motdepasseconnexion']));
-    //connexion avec la base de données
-    //connexion avec la base de données
+    //connexion avec la base de données et récupération des infos
     $conn = new PDO("mysql:host=localhost; dbname=dev;", 'dev', 'devpass');
     $sql = "SELECT * FROM `account` WHERE `username` = :username";
     $statement = $conn->prepare($sql);
@@ -26,16 +25,20 @@
     $prenom = $row['first_name'];
     $account_id = $row['account_id'];
 
+    //Si la colonne username est vide
     if ($row['username'] == NULL) {
         echo ("Nom d'utilisateur inconnu");
     }
-    if (password_verify($motdepasseconnexion, $password)) //si le mot de passe est correct
+    //Si le mot de passe est correct
+    if (password_verify($motdepasseconnexion, $password)) 
     {
         $_SESSION['prenomnom'] = $prenom . ' ' . $nom;
         $_SESSION['account_id'] =  $account_id;
         $_SESSION['username'] = $username;
         echo ("Mot de passe correct");
-    } else {
+    } 
+    //Si le mot de passe est incorrect
+    else {
         echo ("Mot de passe erroné");
     }
     ?>

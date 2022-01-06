@@ -14,30 +14,36 @@ $statement->bindParam('user', $user_id);
 $statement->execute();
 $row = $statement->fetch();
 
-if ($row['vote_id']  > 0) //modifier vote existant
+//Si l'utilisateur a déjà voté
+if ($row['vote_id']  > 0) 
 {
     $sql = "UPDATE `vote` SET `vote` =" . $vote .  " WHERE `vote`.`vote_id` =" . $row['vote_id'] . ";";
     $statement = $conn->prepare($sql);
     $statement->execute();
-} else //nouveau vote, premiere fois
+} else //Si l'utilisateur n'a jamais voté
 {
     $sql = "INSERT INTO `vote` (`vote_id`, `user_id`, `acteur_id`, `vote`) VALUES (NULL, " . $user_id . ", " . $acteur_id . ", " . $vote . ");";
     $statement = $conn->prepare($sql);
     $statement->execute();
 }
 
+//Calcul du nombre d'occurences de votes positifs
 $sql1 = "SELECT COUNT(*) AS `somme_votepositif` FROM `vote` WHERE `acteur_id` = :acteur_id AND `vote` = '1'  ";
-$sql2 = "SELECT COUNT(*) AS `somme_votenegatif` FROM `vote` WHERE `acteur_id` = :acteur_id AND `vote` = '-1'  ";
 $statement1 = $conn->prepare($sql1);
-$statement2 = $conn->prepare($sql2);
 $statement1->bindParam('acteur_id', $acteur_id);
 $statement1->execute();
 $row3 = $statement1->fetch();
+$somme_votepositif = $row3['somme_votepositif'];
+
+//Calcul du nombre d'occurences de votes négatifs
+$sql2 = "SELECT COUNT(*) AS `somme_votenegatif` FROM `vote` WHERE `acteur_id` = :acteur_id AND `vote` = '-1'  ";
+$statement2 = $conn->prepare($sql2);
 $statement2->bindParam('acteur_id', $acteur_id);
 $statement2->execute();
 $row2 = $statement2->fetch();
-$somme_votepositif = $row3['somme_votepositif'];
 $somme_votenegatif = $row2['somme_votenegatif'];
+
+
 
 header('Content-type: text/xml');
 header('Pragma: public');

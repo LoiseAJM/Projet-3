@@ -21,7 +21,6 @@
     <?php require '_header.php'; ?>
 
     <div class="page">
-        <div class="conteneur">
             <!--Section présentation -->
             <div class="boxed_wide">
                 <h1 class="centered bottom-space">Le GBAF</h1>
@@ -81,7 +80,6 @@
                     </div>
                 <?php endwhile; ?>
             </div>
-        </div>
         <?php require '_footer.php'; ?>
 
 </html>

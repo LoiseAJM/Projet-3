@@ -6,12 +6,9 @@
     <title>ajax Oubli d'identifiant</title>
 </head>
 
-
 <body>
 
     <?php
-
-
     $r_nom = htmlentities(trim($_GET['r_nom']));
     $r_prenom = htmlentities(trim($_GET['r_prenom']));
 
@@ -30,7 +27,6 @@
         echo ('<div class="bottom_space"><span>Votre identifiant est :</span>' . ' ' . '<span class="redbold">' . $row['username'] . '</span></div>');
         echo ('<p class="centered underline"> <a href="index.php">Revenir à l&#039accueil</a></p>');
     }
-    // }
     ?>
 
 

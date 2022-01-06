@@ -13,6 +13,9 @@ header {
     border-bottom: 2px solid black;
 }
 
+
+/*Style du footer*/
+
 footer {
     position: fixed;
     bottom: 0;
@@ -28,6 +31,8 @@ footer {
 
 .page {
     margin-bottom: 5%;
+    width: 80%;
+    margin: auto;
 }
 
 h1 {
@@ -302,11 +307,6 @@ form h1 {
 #logoGBAF {
     max-width: 60px;
     margin-top: 5px;
-}
-
-.conteneur {
-    width: 80%;
-    margin: auto;
 }
 
 
