@@ -19,7 +19,7 @@
         <!--Appel du header-->
         <?php require '_header.php'; ?>
                 <!--Formulaire-->
-                <form id="formulaire_inscription" method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>"> 
+                <form id="formulaire_inscription" class="form_style" method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>"> 
                     <h1 id="titre_formulaire">
                         Créer un compte
                     </h1>

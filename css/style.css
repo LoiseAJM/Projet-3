@@ -273,7 +273,7 @@ input[type=submit]:hover {
 
 /* Entrée de formulaire invalide  */
 input:invalid {
-    border: 2px dashed red;
+    border: 2px dashed;
   }
   
   input:valid {
