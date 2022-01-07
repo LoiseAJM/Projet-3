@@ -32,7 +32,7 @@ if (isset($_SESSION['prenomnom'])) {
 
     <?php if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $reponse = htmlentities(trim($_POST['reponse']));
-
+        //verification de la correspondance des reponses
         if ($_SESSION['reponsesecrete'] == $reponse) {
             echo '<meta http-equiv="refresh" content="0;change_password.php">';
         } else {

@@ -53,7 +53,7 @@
             <?php echo $acteur_description_encode ?>
         </div>
 
-        <!-- Partie commentaires -->
+        <!-- Partie recuperation votes et commentaires -->
         <div class="boxed_wide">
             <?php
             $sql1 = "SELECT COUNT(*) AS `somme_votepositif` FROM `vote` WHERE `acteur_id` = :acteur_id AND `vote` = '1'  ";
@@ -92,7 +92,7 @@
                     </a>
                 </div>
             </div>
-            <!-- <div id="text_info">erreur</div> -->
+            
         </div>
 
         <div>
@@ -117,9 +117,9 @@
     </div>
     </div>
     <?php require '_footer.php'; ?>
-    <!--<script type="text/javascript" src="js/monscript.js"></script>-->
+    
 
-
+    <!-- AJAX pour recuperer les votes negatifs et positifs en XML et les afficher dans les emplacements correspondants  -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 
     <script type="text/javascript">

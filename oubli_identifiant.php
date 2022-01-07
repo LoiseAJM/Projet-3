@@ -37,6 +37,7 @@ if (isset($_SESSION['prenomnom'])) {
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <script type="text/javascript">
+        //fonction en AJAX pour recuperer l'identifiant par les infos perso, sans recharger la page
         function loadDoc() {
             const xhttp = new XMLHttpRequest();
             xhttp.onload = function() {

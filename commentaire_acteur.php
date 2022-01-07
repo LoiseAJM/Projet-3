@@ -81,7 +81,7 @@ if (empty($_SESSION['prenomnom'])) {
                 $sql3 = "INSERT INTO `post`( `user_id`, `acteur_id`, `date_add`, `post`) 
                         VALUES ( :account_id, :acteur_id, :date, :commentaire  )";
 
-                // use exec() because no results are returned
+                
                 $statement = $connexion->prepare($sql3);
                 $statement->bindParam('account_id', $account_id);
                 $statement->bindParam('acteur_id', $acteur_id);

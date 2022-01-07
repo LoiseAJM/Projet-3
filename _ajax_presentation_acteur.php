@@ -43,7 +43,7 @@ $row2 = $statement2->fetch();
 $somme_votenegatif = $row2['somme_votenegatif'];
 
 
-
+//code de generation XML des infos acteurs, pour les sommes des votes positifs et negatifs
 header('Content-type: text/xml');
 header('Pragma: public');
 header('Cache-control: private');

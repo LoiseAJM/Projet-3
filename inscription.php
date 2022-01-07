@@ -99,7 +99,7 @@ if (isset($_SESSION['prenomnom'])) {
                 $sql = "INSERT INTO `account`( `last_name`, `first_name`, `username`, `password`, `question`, `answer`) 
                         VALUES ( :att_nom, :att_prenom, :att_username, :att_password, :att_questionsecrete, :att_reponse )";
 
-                // use exec() because no results are returned
+                
                 $statement = $conn->prepare($sql);
                 $statement->bindParam('att_nom', $nom);
                 $statement->bindParam('att_prenom', $prenom);

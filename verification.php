@@ -1,6 +1,6 @@
 <?php session_start(); ?>
 <html>
-
+<!--verification de mot de passe au moment de la connexion -->
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
