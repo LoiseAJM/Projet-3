@@ -40,7 +40,7 @@
         ?>
 
         <!-- Partie description de l'acteur -->
-        <div class="form_style">
+        <div class="boxed_wide">
             <!-- Logo de l'acteur -->
             <div class="centered bottom_space">
                 <img class="image_logo" src=<?php echo $acteur_logo ?>></img>
@@ -54,7 +54,7 @@
         </div>
 
         <!-- Partie commentaires -->
-        <div class="form_style">
+        <div class="boxed_wide">
             <?php
             $sql1 = "SELECT COUNT(*) AS `somme_votepositif` FROM `vote` WHERE `acteur_id` = :acteur_id AND `vote` = '1'  ";
             $sql2 = "SELECT COUNT(*) AS `somme_votenegatif` FROM `vote` WHERE `acteur_id` = :acteur_id AND `vote` = '-1'  ";

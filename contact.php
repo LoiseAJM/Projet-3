@@ -12,7 +12,7 @@
 <!--Appel du header-->
 <?php require '_header.php'; ?>
 <div class="page boxed_80">
-    <p>Pour toute question, veuillez envoyer un mail à <a class=underline href="mailto:loise.mauguin@gmail.com?subject=GBAF">loise.mauguin@gmail.com</a></p>
+    <p>Pour toute question, veuillez envoyer un mail à <a  href="mailto:loise.mauguin@gmail.com?subject=GBAF"><span class="underline">loise.mauguin@gmail.com</span></a></p>
 </div>
 <?php require '_footer.php'; ?>
 

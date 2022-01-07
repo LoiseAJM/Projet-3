@@ -4,11 +4,6 @@
     if (session_id() == '') {
         session_start();
     }
-
-    /*On utilise session_id() pour récupérer l'id de session s'il existe.
-     *Si l'id de session n'existe  pas, session_id() renvoie une chaine
-     *de caractères vide*/
-    $id_session = session_id();
     ?>
     <html>
 
@@ -26,6 +21,8 @@
             <a href="index.php"> <img id="logoGBAF" src="images/logo_gbaf.png" alt="logo GBAF" /></a>
             <div class="right_align bottom_right_align">
                 <p><?php
+                //Vérifie l'existence de la variable de session prenomnom définie
+                //lors de la connexion dans verification.php
                     if (isset($_SESSION['prenomnom'])) {
                         echo 'Bonjour ' . $_SESSION['prenomnom'];
                     } else {
@@ -33,7 +30,7 @@
                     } ?></p>
                 <p><?php
                     if (isset($_SESSION['prenomnom'])) {
-                        echo '<a href="deconnexion.php"> Déconnexion</a>';
+                        echo '<a href="deconnexion.php"> <span class= "underline" > Déconnexion</span></a>';
                     } ?> </p>
             </div>
         </div>

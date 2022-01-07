@@ -5,6 +5,10 @@
     padding: 0;
 }
 
+body {
+    font-family: Roboto, Helvetica, Arial, sans-serif;
+}
+
 
 /*Style du header*/
 
@@ -27,12 +31,13 @@ footer {
 }
 
 
-/*Conteneur de la page avec une marge correspondant au header*/
+/*Conteneur de la page*/
 
 .page {
-    margin-bottom: 5%;
+    margin-left: auto;
     width: 80%;
-    margin: auto;
+    margin-right: auto;
+    margin-bottom: 5%;
 }
 
 h1 {
@@ -46,16 +51,6 @@ h3 {
 
 .aligne_a_droite {
     float: right;
-}
-
-a {
-    color: black;
-    text-decoration: underline;
-}
-
-a:hover {
-    color: grey;
-    text-decoration: underline;
 }
 
 .form_style {
@@ -361,4 +356,16 @@ form h1 {
 
 .underline {
     text-decoration: underline;
+}
+
+a {
+    color: black
+}
+
+.bouton_pouce a {
+    color: #666666;
+}
+
+.acteur_button_click a {
+    color: white
 }
