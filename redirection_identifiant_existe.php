@@ -15,6 +15,8 @@ if (isset($_SESSION['prenomnom'])) {
     header('Location: accueil_success.php');
 }
 ?>
+
+<!-- Si l'utilisateur n'est pas connecté  -->
 <meta http-equiv="refresh" content="4;inscription.php">
 <?php require '_header.php'; ?>
 <div class="boxed">

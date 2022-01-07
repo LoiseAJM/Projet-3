@@ -1,6 +1,6 @@
 <?php session_start(); ?>
 <html>
-<!--verification de mot de passe au moment de la connexion -->
+<!--Vérification de mot de passe au moment de la connexion -->
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -19,10 +19,11 @@ if (isset($_SESSION['prenomnom'])) {
 <!--Utilisateur non connecté-->
 <?php {
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
+        //Récupération des infos du formulaire 
         $identifiant = htmlentities(trim($_POST['f_identifiant']));
         $motdepasseconnexion = htmlentities(trim($_POST['f_motdepasseconnexion']));
         //connexion avec la base de données
-        //connexion avec la base de données
+
         $conn = new PDO("mysql:host=localhost; dbname=dev;", 'dev', 'devpass');
         $sql = "SELECT * FROM `account` WHERE `username` = :username";
         $statement = $conn->prepare($sql);
@@ -49,7 +50,7 @@ if (isset($_SESSION['prenomnom'])) {
                 $_SESSION['account_id'] =  $account_id;
                 $_SESSION['username'] = $username;
                 header('Location: accueil_success.php');
-            } else {
+            } else {//le mot de passe n'est pas correct
                 session_destroy();
                 require 'connexion.php';
                 echo "<div class='centered redbold'>Mot de passe incorrect<div>";

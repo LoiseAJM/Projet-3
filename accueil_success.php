@@ -34,7 +34,7 @@
                 pouvoirs publics.
             </p>
             <div class="centered">
-                <img class="centered" src="images/illustration.jpg" style="height:30%; max-width:80%"></img>
+                <img class="centered image_accueil" src="images/illustration.jpg"></img>
             </div>
 
         </div>

@@ -396,3 +396,7 @@ a {
 .acteur_button_click a {
     color: white
 }
+
+.image_accueil {
+    max-width: 80%;
+}

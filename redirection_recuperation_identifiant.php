@@ -15,6 +15,7 @@ if (isset($_SESSION['prenomnom'])) {
     header('Location: accueil_success.php');
 }
 ?>
+<!-- Si l'utilisateur n'est pas connecté  -->
 <?php require '_header.php'; ?>
 <div class="boxed">
     <p> Votre identifiant est : <bold class="redbold"> <?php echo $_SESSION['identifiant'] ?></bold>

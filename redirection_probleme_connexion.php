@@ -15,6 +15,7 @@ if (isset($_SESSION['prenomnom'])) {
     header('Location: accueil_success.php');
 }
 ?>
+<!-- Si l'utilisateur n'est pas connecté  -->
 <?php require '_header.php'; ?>
 <div class="boxed">
     <h1 class="centered"> Que se passe-t-il ? </h1><br>

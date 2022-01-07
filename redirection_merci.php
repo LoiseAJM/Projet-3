@@ -9,12 +9,15 @@
     <!--Favicon-->
     <link rel="icon" type="image" href="images/favicon-gbaf.png" />
 </head>
-<?php if (empty($_SESSION['prenomnom'])) //l'utilisateur n'est pas connecté
+<!-- Si l'utilisateur n'est pas connecté  -->
+<?php if (empty($_SESSION['prenomnom']))
 {
     session_destroy();
     header('Location: index.php');
 }
 ?>
+
+<!-- Si l'utilisateur est connecté  -->
 <meta http-equiv="refresh" content="4;accueil_success.php">
 <?php require '_header.php'; ?>
 <div class="boxed">
