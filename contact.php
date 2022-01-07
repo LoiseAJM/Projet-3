@@ -11,7 +11,7 @@
 </head>
 <!--Appel du header-->
 <?php require '_header.php'; ?>
-<div class="page boxed_80">
+<div class="page boxed_wide">
     <p>Pour toute question, veuillez envoyer un mail à <a  href="mailto:loise.mauguin@gmail.com?subject=GBAF"><span class="underline">loise.mauguin@gmail.com</span></a></p>
 </div>
 <?php require '_footer.php'; ?>

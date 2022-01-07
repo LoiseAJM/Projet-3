@@ -5,16 +5,19 @@
     padding: 0;
 }
 
-body {
-    font-family: Roboto, Helvetica, Arial, sans-serif;
-}
-
 
 /*Style du header*/
 
 header {
     color: black;
     border-bottom: 2px solid black;
+}
+
+
+/*Style du body*/
+
+body {
+    font-family: Roboto, Helvetica, Arial, sans-serif;
 }
 
 
@@ -40,6 +43,9 @@ footer {
     margin-bottom: 5%;
 }
 
+
+/*Styles de titres*/
+
 h1 {
     margin-bottom: 2%;
     text-align: center;
@@ -49,9 +55,8 @@ h3 {
     display: inline
 }
 
-.aligne_a_droite {
-    float: right;
-}
+
+/*Style général des formulaires*/
 
 .form_style {
     width: 50%;
@@ -66,6 +71,9 @@ h3 {
     border-radius: 0px;
 }
 
+
+/*Contenu encadré, taille 50%*/
+
 .boxed {
     width: 50%;
     margin-left: auto;
@@ -79,6 +87,9 @@ h3 {
     border-radius: 0px;
 }
 
+
+/*Contenu encadré, prenant la largeur du parent*/
+
 .boxed_wide {
     margin-left: auto;
     margin-right: auto;
@@ -91,21 +102,10 @@ h3 {
     border-radius: 0px;
 }
 
-.boxed_80 {
-    width: 80%;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 30px;
-    margin-bottom: 30px;
-    padding: 30px;
-    border: 1px solid #f1f1f1;
-    background: #fff;
-    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
-    border-radius: 0px;
-}
+
+/* Responsive tablette et ordinateur */
 
 @media only screen and (min-width: 768px) {
-    /* tablettes et ordinateurs */
     .acteur {
         background-color: rgba(211, 211, 211, 0.596);
         display: inline-flex;
@@ -156,8 +156,10 @@ h3 {
     }
 }
 
+
+/* Responsive smartphone */
+
 @media only screen and (max-width: 767px) {
-    /* smartphone */
     .pouce {
         max-width: 100%;
         max-height: 100%;
@@ -205,20 +207,19 @@ h3 {
     }
 }
 
-.flottant_gauche {
-    float: left;
-}
-
-.width85 {
-    min-width: 85%;
-}
-
 .acteur_button_click:hover {
     background-color: #bd2a2a;
 }
 
 
-/* Full-width inputs */
+/*Alignement droite*/
+
+.aligne_a_droite {
+    float: right;
+}
+
+
+/* Entrées formulaire */
 
 input[type=text],
 input[type=password] {
@@ -244,7 +245,7 @@ input[type=submit] {
 }
 
 
-/*Bouton survolé*/
+/*Bouton submit survolé*/
 
 input[type=submit]:hover {
     background-color: white;
@@ -274,9 +275,15 @@ form h1 {
     text-align: center;
 }
 
+
+/*Centrer un texte*/
+
 .centered {
     text-align: center;
 }
+
+
+/*Centrer une div*/
 
 .div_centered {
     margin-left: auto;
@@ -290,14 +297,16 @@ form h1 {
     margin-bottom: 2%;
 }
 
+
+/*Texte en gras et rouge*/
+
 .redbold {
     color: red;
     font-weight: bold;
 }
 
-#listeBanque {
-    display: inline
-}
+
+/*Logo du header*/
 
 #logoGBAF {
     max-width: 60px;
@@ -315,15 +324,24 @@ form h1 {
     width: 100%;
 }
 
+
+/*Alignement en bas à droite (infos de login dans le header*/
+
 .bottom_right_align {
     position: absolute;
     bottom: 0.5em;
     right: 2%;
 }
 
+
+/*Style gras*/
+
 .bold {
     font-weight: bold;
 }
+
+
+/*Style italique*/
 
 .italique {
     font-style: italic;
@@ -354,6 +372,9 @@ form h1 {
     background-color: #e9e9e9;
 }
 
+
+/*Texte souligné*/
+
 .underline {
     text-decoration: underline;
 }
@@ -362,9 +383,15 @@ a {
     color: black
 }
 
+
+/*Couleur du lien dans le bouton commentaire*/
+
 .bouton_pouce a {
     color: #666666;
 }
+
+
+/*Couleur des liens dans le bouton acteur "Lire la suite"*/
 
 .acteur_button_click a {
     color: white
