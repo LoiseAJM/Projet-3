@@ -76,7 +76,7 @@
                             <?php echo $acteur_description_encode; ?>
                         </div>
                     </div>
-                    <div class="acteur_button">
+                    <div class="acteur_button div_centered">
                         <a class="acteur_button_click" href="<?php echo $url_acteur; ?>">Lire la suite</a>
                     </div>
                 </div>

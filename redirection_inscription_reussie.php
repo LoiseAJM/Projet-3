@@ -21,7 +21,7 @@ if (isset($_SESSION['prenomnom'])) {
     <?php require '_header.php'; ?>
     <div class="boxed">
         <p> Inscription réalisée avec succès, vous allez être redirigé vers la page de connexion</p>
-        <p> Si vous n'êtes pas redirigé, cliquez ici : <a href="index.php">Page d'accueil</a></p>
+        <p> Si vous n'êtes pas redirigé, cliquez ici : <a href="index.php"><span class="underline">Page d'accueil</span></a></p>
 
     </div>
 

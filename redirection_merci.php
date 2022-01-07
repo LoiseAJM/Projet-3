@@ -22,7 +22,7 @@
 <?php require '_header.php'; ?>
 <div class="boxed">
     <p> Merci d'avoir donné votre avis sur ce partenaire.</p>
-    <p> Si vous n'êtes pas redirigé, cliquez ici : <a href="accueil_success.php">accueil</a></p>
+    <p> Si vous n'êtes pas redirigé, cliquez ici : <a href="accueil_success.php"><span class="underline">Accueil</span></a></p>
 
 </div>
 <?php require '_footer.php' ?>

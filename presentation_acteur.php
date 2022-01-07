@@ -87,13 +87,10 @@
                     <button id="neg" class="bouton_pouce" type="button" onclick="loadd(-1)">
                         <?php echo " " ?><?php echo $somme_votenegatif ?> 👎
                     </button>
-                    <a href="commentaire_acteur.php?id=<?php echo ($acteur_id); ?>">
-                        <div id="commentaire" class="bouton_pouce">Nouveau commentaire
-                    </a>
+                    <button id="commentaire" class="bouton_pouce" onclick="window.location.href = 'commentaire_acteur.php?id=<?php echo ($acteur_id); ?>';">Nouveau commentaire</button>
                 </div>
             </div>
             
-        </div>
 
         <div>
             <div class="acteur_description">
