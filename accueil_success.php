@@ -55,7 +55,9 @@
         <div class="boxed_wide">
             <?php while ($row = $statement1->fetch(PDO::FETCH_ASSOC)) :;
             ?>
-                <?php $acteur_description = substr($row['acteur_description'], 0, 150) . "...";
+                <?php
+                /* Taille de la description limitée à 150 caractères */
+                $acteur_description = substr($row['acteur_description'], 0, 150) . "...";
                 $acteur_description_encode = utf8_encode($acteur_description);
                 $acteur_id = $row['acteur_id'];
                 $url_acteur = 'presentation_acteur.php?id=' . $acteur_id;
@@ -81,6 +83,6 @@
             <?php endwhile; ?>
         </div>
     </div>
-        <?php require '_footer.php'; ?>
+    <?php require '_footer.php'; ?>
 
 </html>

@@ -21,8 +21,8 @@
             <a href="index.php"> <img id="logoGBAF" src="images/logo_gbaf.png" alt="logo GBAF" /></a>
             <div class="right_align bottom_right_align">
                 <p><?php
-                //Vérifie l'existence de la variable de session prenomnom définie
-                //lors de la connexion dans verification.php
+                    //Vérifie l'existence de la variable de session prenomnom définie
+                    //lors de la connexion dans verification.php
                     if (isset($_SESSION['prenomnom'])) {
                         echo 'Bonjour ' . $_SESSION['prenomnom'];
                     } else {

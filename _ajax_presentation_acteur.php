@@ -15,8 +15,7 @@ $statement->execute();
 $row = $statement->fetch();
 
 //Si l'utilisateur a déjà voté
-if ($row['vote_id']  > 0) 
-{
+if ($row['vote_id']  > 0) {
     $sql = "UPDATE `vote` SET `vote` =" . $vote .  " WHERE `vote`.`vote_id` =" . $row['vote_id'] . ";";
     $statement = $conn->prepare($sql);
     $statement->execute();
