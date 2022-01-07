@@ -18,8 +18,10 @@
 
     <body>
         <div class="menusuperieur">
-            <a href="index.php"> <img id="logoGBAF" src="images/logo_gbaf.png" alt="logo GBAF" /></a>
-            <div class="right_align bottom_right_align">
+        <div class = "connexion_header_smartphone">    
+        <a  href="index.php"> <img id="logoGBAF" src="images/logo_gbaf.png" alt="logo GBAF" /></a>
+</div>   
+        <div class="connexion_header_computer connexion_header_smartphone">
                 <p><?php
                     //Vérifie l'existence de la variable de session prenomnom définie
                     //lors de la connexion dans verification.php

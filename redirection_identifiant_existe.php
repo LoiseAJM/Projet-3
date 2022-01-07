@@ -21,7 +21,7 @@ if (isset($_SESSION['prenomnom'])) {
 <?php require '_header.php'; ?>
 <div class="boxed">
     <p> Cet identifiant existe déjà, merci d'en choisir un autre.</p>
-    <p> Si vous n'êtes pas redirigé, cliquez ici : <a href="inscription.php">Inscription</a></p>
+    <p> Si vous n'êtes pas redirigé, cliquez ici : <a href="inscription.php"><span class="centered">Inscription</span></a></p>
     <?php require '_footer.php' ?>
 </div>
 

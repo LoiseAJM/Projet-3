@@ -34,14 +34,6 @@ footer {
 }
 
 
-/*Conteneur de la page*/
-
-.page {
-    margin-left: auto;
-    width: 80%;
-    margin-right: auto;
-    margin-bottom: 5%;
-}
 
 
 /*Styles de titres*/
@@ -106,6 +98,16 @@ h3 {
 /* Responsive tablette et ordinateur */
 
 @media only screen and (min-width: 768px) {
+
+    /*Conteneur de la page*/
+
+    .page {
+        margin-left: auto;
+        width: 80%;
+        margin-right: auto;
+        margin-bottom: 5%;
+    }
+
     .acteur {
         background-color: rgba(211, 211, 211, 0.596);
         display: inline-flex;
@@ -113,72 +115,122 @@ h3 {
         margin: auto;
         max-width: 100%;
     }
+
     .image_logo {
         max-width: 100%;
         max-height: 100%;
         margin-right: auto;
         margin-left: auto;
     }
+
     .acteur_logo {
         width: 20%;
         position: relative;
     }
+
     .acteur_corps {
         width: 65%;
         margin-right: 2%;
         margin-left: 2%;
     }
+
     .acteur_button {
         width: 15%;
-        margin:auto;
+        margin: auto;
     }
+
     .acteur_button_click {
         background: #ff0000;
         border-radius: 11px;
         padding: 2% 5%;
         color: #ffffff;
-       
+
         font: normal bold "Open Sans", sans-serif;
         text-align: center;
-        
+
     }
+
     a:link {
         text-decoration: none;
     }
+
     .compteur_vote {
         font-size: 4em;
         color: #000000;
         font-weight: 700;
     }
+
     .pouce {
         max-width: 100%;
         max-height: 100%;
         width: 40%;
     }
+
+
+    /*Logo du header*/
+
+    #logoGBAF {
+        max-width: 60px;
+        margin-top: 5px;
+    }
+
+
+    /*Menu du header*/
+
+    .menusuperieur {
+        display: inline-flex;
+        list-style: none;
+        padding: 0;
+        position: relative;
+        width: 100%;
+    }
+
+    /*Alignement en bas à droite (infos de login dans le header*/
+
+    .connexion_header_computer {
+        position: absolute;
+        bottom: 0.5em;
+        right: 2%;
+    }
+
+
 }
 
 
 /* Responsive smartphone */
 
 @media only screen and (max-width: 767px) {
+
+    /*Conteneur de la page*/
+
+    .page {
+        margin-left: auto;
+        width: 80%;
+        margin-right: auto;
+        margin-bottom: 20%;
+    }
+
     .pouce {
         max-width: 100%;
         max-height: 100%;
         width: 40%;
         max-width: 100px;
     }
+
     .image_logo {
         max-width: 100%;
         max-height: 100%;
         margin-right: auto;
         margin-left: auto;
     }
+
     .compteur_vote {
         font-size: 4em;
         color: #000000;
         font-weight: 700;
         display: inline-flex;
     }
+
     .acteur_button_click {
         background: #ff0000;
         border-radius: 11px;
@@ -189,22 +241,44 @@ h3 {
         text-align: center;
         margin: auto;
     }
+
     .acteur {
         background-color: rgba(211, 211, 211, 0.596);
         padding: 5px;
         max-width: 100%;
         margin: auto;
     }
+
     .acteur_logo {
         position: relative;
     }
+
     .acteur_corps {
         margin-right: 2%;
         margin-left: 2%;
     }
+
     .acteur_button {
         position: relative;
         margin: auto;
+    }
+
+    /*Logo du header*/
+
+    #logoGBAF {
+        max-width: 60px;
+        margin: auto;
+    }
+
+    /*Menu du header*/
+
+    .menusuperieur {
+        display: block;
+    }
+
+    .connexion_header_smartphone {
+        text-align: center;
+        margin-bottom: 4px;
     }
 }
 
@@ -307,32 +381,6 @@ form h1 {
 }
 
 
-/*Logo du header*/
-
-#logoGBAF {
-    max-width: 60px;
-    margin-top: 5px;
-}
-
-
-/*Menu du header*/
-
-.menusuperieur {
-    display: inline-flex;
-    list-style: none;
-    padding: 0;
-    position: relative;
-    width: 100%;
-}
-
-
-/*Alignement en bas à droite (infos de login dans le header*/
-
-.bottom_right_align {
-    position: absolute;
-    bottom: 0.5em;
-    right: 2%;
-}
 
 
 /*Style gras*/
