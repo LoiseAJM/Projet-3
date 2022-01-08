@@ -68,7 +68,7 @@
             $row2 = $statement2->fetch();
             $somme_votepositif = $row3['somme_votepositif'];
             $somme_votenegatif = $row2['somme_votenegatif'];
-            $sqlrequest = "SELECT post.post, post.acteur_id, post.user_id, post.date_add, account.account_id, account.username FROM `post` INNER JOIN account ON post.user_id=account.account_id 
+            $sqlrequest = "SELECT post.post, post.acteur_id, post.user_id, post.date_add, account.account_id, account.first_name FROM `post` INNER JOIN account ON post.user_id=account.account_id 
                 WHERE `acteur_id` = :acteur_id
                 ";
             $stat = $conn->prepare($sqlrequest);
@@ -97,7 +97,7 @@
                 <?php while ($row4 = $stat->fetch(PDO::FETCH_ASSOC)) :
                     $post = $row4['post'];
                     $date = $row4['date_add'];
-                    $username = $row4['username']; ?>
+                    $username = $row4['first_name']; ?>
 
                     <div class="bold">
                         <?php echo $date;  ?>

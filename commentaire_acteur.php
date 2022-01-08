@@ -39,7 +39,7 @@ if (empty($_SESSION['prenomnom'])) {
     ?>
 
     <!--Formulaire-->
-    <form class="form_style" id="formulaire_inscription" method="post">
+    <form class="form_style" method="post">
         <h1 id="titre_formulaire">
             <?php echo $acteur_name ?>
         </h1>
