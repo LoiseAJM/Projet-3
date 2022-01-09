@@ -36,7 +36,6 @@ if (isset($_SESSION['prenomnom'])) {
         $prenom = $row['first_name'];
         $account_id = $row['account_id'];
         $username = $row['username'];
-        require '_header.php';
 
         if (empty($username)) //l'username n'existe pas dans la db
         {
@@ -53,13 +52,13 @@ if (isset($_SESSION['prenomnom'])) {
                 header('Location: accueil_success.php');
             } else { //le mot de passe n'est pas correct
                 session_destroy();
-                header('Location: redirection_motdepasse_incorrect.php');
+                require 'connexion.php';
+                echo "<div class='centered redbold'>Mot de passe incorrect<div>";
+
             }
         }
     }
 }
-
-require '_footer.php';
 
 
 ?>
