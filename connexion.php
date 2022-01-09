@@ -1,4 +1,3 @@
-<?php session_start(); ?>
 <html>
 
 <head>
@@ -16,8 +15,6 @@
     if (isset($_SESSION['prenomnom'])) {
         header('Location: accueil_success.php');
     } ?>
-
-    <?php require '_header.php' ?>
 
     <form class="form_style" method="post" action="<?php echo htmlspecialchars("verification.php"); ?>">
 
@@ -45,7 +42,6 @@
             <a href="redirection_probleme_connexion.php">Je n'arrive pas à me connecter</a>
         </div>
     </form>
-    <?php require '_footer.php' ?>
 </body>
 
 </html>
