@@ -16,6 +16,8 @@
         header('Location: accueil_success.php');
     } ?>
 
+<?php require '_header.php'; ?>
+
     <form class="form_style" method="post" action="<?php echo htmlspecialchars("verification.php"); ?>">
 
         <h1 id="connexion">
@@ -43,5 +45,5 @@
         </div>
     </form>
 </body>
-
+<?php require '_footer.php'; ?>
 </html>

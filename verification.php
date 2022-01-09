@@ -1,6 +1,7 @@
 <?php session_start(); ?>
 <html>
 <!--Vérification de mot de passe au moment de la connexion -->
+
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -35,14 +36,14 @@ if (isset($_SESSION['prenomnom'])) {
         $prenom = $row['first_name'];
         $account_id = $row['account_id'];
         $username = $row['username'];
+        require '_header.php';
 
         if (empty($username)) //l'username n'existe pas dans la db
         {
             session_destroy();
-            require '_header.php';
+
             require 'connexion.php';
             echo "<div class='centered redbold'>Identifiant inconnu<div>";
-            require '_footer.php';
         } else {
             if (password_verify($motdepasseconnexion, $password)) //si le mot de passe est correct
             {
@@ -50,15 +51,15 @@ if (isset($_SESSION['prenomnom'])) {
                 $_SESSION['account_id'] =  $account_id;
                 $_SESSION['username'] = $username;
                 header('Location: accueil_success.php');
-            } else {//le mot de passe n'est pas correct
+            } else { //le mot de passe n'est pas correct
                 session_destroy();
-                require 'connexion.php';
-                echo "<div class='centered redbold'>Mot de passe incorrect<div>";
+                header('Location: redirection_motdepasse_incorrect.php');
             }
         }
     }
 }
 
+require '_footer.php';
 
 
 ?>
