@@ -1,5 +1,5 @@
 <!Doctype html>
-<html>
+<html lang="fr">
 
 <head>
     <meta charset="utf-8">
@@ -7,7 +7,7 @@
     <title>Mentions légales</title>
     <link rel="stylesheet" href="css/style.css">
     <!--Favicon-->
-    <link rel="icon" type="image" href="images/favicon-gbaf.png" />
+    <link rel="icon"   href="images/favicon-gbaf.png" />
 </head>
 <!--Appel du header-->
 <?php require '_header.php'; ?>

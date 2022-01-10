@@ -1,5 +1,6 @@
 <?php session_start(); ?>
-<html>
+<!DOCTYPE html>
+<html lang="fr">
 <!--Vérification de mot de passe au moment de la connexion -->
 
 <head>
@@ -8,7 +9,7 @@
     <title>Vérification</title>
     <link rel="stylesheet" href="css/style.css">
     <!--Favicon-->
-    <link rel="icon" type="image" href="images/favicon-gbaf.png" />
+    <link rel="icon"   href="images/favicon-gbaf.png" />
 </head>
 <!-- Si l'utilisateur est connecté  -->
 <?php

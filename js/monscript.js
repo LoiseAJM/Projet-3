@@ -133,3 +133,14 @@ function verification_formulaire_inscription(e)
             reponse_erreur.textContent ='';
         }
     }
+
+let formulaire_connexion = document.getElementById("formulaire_connexion");
+let submit_connexion = document.getElementById("submit_connexion");
+let motdepasse_connexion = document.getElementById("motdepasse_connexion");
+let identifiant_connexion = document.getElementById("identifiant_connexion");
+let erreur_identifiant = document.getElementById("erreur_identifiant");
+let erreur_motdepasse = document.getElementById("erreur_motdepasse");
+
+formulaire_connexion.addEventListener('submit', verification_formulaire_connexion);
+
+    

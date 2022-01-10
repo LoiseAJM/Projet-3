@@ -1,5 +1,6 @@
 <?php session_start(); ?>
-<html>
+<!DOCTYPE html>
+<html lang="fr">
 
 <head>
     <meta charset="utf-8">
@@ -7,7 +8,7 @@
     <title>Oubli d'identifiant</title>
     <link rel="stylesheet" href="css/style.css">
     <!--Favicon-->
-    <link rel="icon" type="image" href="images/favicon-gbaf.png" />
+    <link rel="icon"   href="images/favicon-gbaf.png" />
 </head>
 <!-- Si l'utilisateur est connecté  -->
 <?php
@@ -27,17 +28,17 @@ if (isset($_SESSION['prenomnom'])) {
             J'ai oublié mon identifiant
         </h1>
         <div id="formulaire_contenu">
-            <label for="prenom"> Prénom :</label>
+            <label> Prénom :</label>
             <input id="r_prenom" type="text" name="prenom" placeholder="Prénom">
-            <label for="nom"> Nom de famille :</label>
+            <label> Nom de famille :</label>
             <input id="r_nom" type="text" name="nom" placeholder="Nom">
             <button class="acteur_button_click div_centered" type="button" onclick="loadDoc()">Valider</button>
         </div>
     </div>
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-    <script type="text/javascript">
-        //fonction en AJAX pour recuperer l'identifiant par les infos perso, sans recharger la page
+    <script >
+        //fonction en AJAX pour recuperer l'identifiant par les infos persos, sans recharger la page
         function loadDoc() {
             const xhttp = new XMLHttpRequest();
             xhttp.onload = function() {
@@ -45,7 +46,8 @@ if (isset($_SESSION['prenomnom'])) {
                     this.responseText;
 
             }
-            xhttp.open("GET", "_ajax_oubli_identifiant.php?r_nom=" + document.getElementById("r_nom").value + "&r_prenom=" + document.getElementById("r_prenom").value);
+            xhttp.open("GET", "_ajax_oubli_identifiant.php?r_nom=" + document.getElementById("r_nom").value + "&r_prenom=" + 
+            document.getElementById("r_prenom").value);
             xhttp.send();
         }
     </script>

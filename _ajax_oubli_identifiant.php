@@ -1,4 +1,4 @@
-<html>
+<html lang="fr">
 
 <head>
     <meta charset="utf-8">
@@ -24,7 +24,8 @@
     if ($row['username'] == NULL) {
         echo ("erreur username");
     } else {
-        echo ('<div class="bottom_space"><span>Votre identifiant est :</span>' . ' ' . '<span class="redbold">' . $row['username'] . '</span></div>');
+        echo ('<div class="bottom_space"><span>Votre identifiant est :</span>' . ' ' . '<span class="redbold">' . $row['username'] . 
+        '</span></div>');
         echo ('<p class="centered underline"> <a href="index.php">Revenir à l&#039accueil</a></p>');
     }
     ?>

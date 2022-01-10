@@ -1,5 +1,6 @@
 <?php session_start(); ?>
-<html>
+<!DOCTYPE html>
+<html lang="fr">
 
 <head>
     <meta charset="utf-8">
@@ -7,7 +8,7 @@
     <title>Oubli de mot de pase</title>
     <link rel="stylesheet" href="css/style.css">
     <!--Favicon-->
-    <link rel="icon" type="image" href="images/favicon-gbaf.png" />
+    <link rel="icon"   href="images/favicon-gbaf.png" />
 </head>
 <!-- Si l'utilisateur est connecté  -->
 <?php
@@ -25,7 +26,7 @@ if (isset($_SESSION['prenomnom'])) {
             J'ai oublié mon mot de passe
         </h1>
         <div>
-            <label for="f_identifiant"> Identifiant :</label>
+            <label> Identifiant :</label>
             <input type="text" name="f_identifiant" placeholder="Votre identifiant">
             <input type="submit" value="Envoyer" />
         </div>

@@ -4,7 +4,7 @@
     <title>Déconnexion</title>
     <link rel="stylesheet" href="css/style.css">
     <!--Favicon-->
-    <link rel="icon" type="image" href="images/favicon-gbaf.png" />
+    <link rel="icon"   href="images/favicon-gbaf.png" />
 </head>
 
 <body>

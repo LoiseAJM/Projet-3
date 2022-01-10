@@ -1,5 +1,6 @@
 <?php session_start(); ?>
-<html>
+<!DOCTYPE html>
+<html lang="fr">
 
 <head>
     <meta charset="utf-8">
@@ -7,7 +8,7 @@
     <title>Inscription</title>
     <link rel="stylesheet" href="css/style.css">
     <!--Favicon-->
-    <link rel="icon" type="image" href="images/favicon-gbaf.png" />
+    <link rel="icon" href="images/favicon-gbaf.png" />
 </head>
 
 <!-- Si l'utilisateur est connecté  -->
@@ -26,39 +27,39 @@ if (isset($_SESSION['prenomnom'])) {
             Créer un compte
         </h1>
         <div>
-            <label for="f_nom">Nom : </label>
-            <input id="f_nom" type="text" name="f_nom" required="true" placeholder="Votre nom">
+            <label>Nom : </label>
+            <input id="f_nom" type="text" name="f_nom" required placeholder="Votre nom">
             <span id="nom_erreur"></span>
         </div>
 
         <div>
-            <label for="f_prenom">Prénom :</label>
-            <input id="f_prenom" type="text" name="f_prenom" required="true" placeholder="Votre prénom">
+            <label>Prénom :</label>
+            <input id="f_prenom" type="text" name="f_prenom" required placeholder="Votre prénom">
             <span id="prenom_erreur"></span>
         </div>
         <div>
-            <label for="f_username">Identifiant :</label>
-            <input id="f_username" type="text" name="f_username" required="true" placeholder="Votre identifiant">
+            <label>Identifiant :</label>
+            <input id="f_username" type="text" name="f_username" required placeholder="Votre identifiant">
             <span id="username_erreur"></span>
         </div>
         <div>
-            <label for="f_password">Mot de passe ( doit contenir au moins 8 caractères, dont un chiffre, une majuscule et une minuscule ):</label>
-            <input id="f_password" type="password" name="f_password" minlength='8 ' required="true" placeholder="Mot de passe">
+            <label>Mot de passe ( doit contenir au moins 8 caractères, dont un chiffre, une majuscule et une minuscule ):</label>
+            <input id="f_password" type="password" name="f_password" minlength='8' required placeholder="Mot de passe">
             <span id="password_erreur"></span>
         </div>
         <div>
-            <label for="f_passwordconfirm">Confirmer le mot de passe</label>
-            <input id="f_passwordconfirm" type="password" name="f_passwordconfirm" required="true" placeholder="Mot de passe">
+            <label>Confirmer le mot de passe</label>
+            <input id="f_passwordconfirm" type="password" name="f_passwordconfirm" required placeholder="Mot de passe">
             <span id="passwordconfirm_erreur"></span>
         </div>
         <div>
-            <label for="f_questionsecrete">Question secrète :</label>
-            <input id="f_questionsecrete" type="text" name="f_questionsecrete" required="true" placeholder="Question secrète">
+            <label>Question secrète :</label>
+            <input id="f_questionsecrete" type="text" name="f_questionsecrete" required placeholder="Question secrète">
             <span id="questionsecrete_erreur"></span>
         </div>
         <div>
-            <label for="f_reponse">Réponse :</label>
-            <input id="f_reponse" type="text" name="f_reponse" required="true" placeholder="Réponse">
+            <label>Réponse :</label>
+            <input id="f_reponse" type="text" name="f_reponse" required placeholder="Réponse">
             <span id="reponse_erreur"></span>
         </div>
         <div>
@@ -66,10 +67,6 @@ if (isset($_SESSION['prenomnom'])) {
         </div>
 
     </form>
-
-
-
-
 
     <?php
     //Stockage des données du formulaire dans des variables
@@ -99,7 +96,7 @@ if (isset($_SESSION['prenomnom'])) {
                 $sql = "INSERT INTO `account`( `last_name`, `first_name`, `username`, `password`, `question`, `answer`) 
                         VALUES ( :att_nom, :att_prenom, :att_username, :att_password, :att_questionsecrete, :att_reponse )";
 
-                
+
                 $statement = $conn->prepare($sql);
                 $statement->bindParam('att_nom', $nom);
                 $statement->bindParam('att_prenom', $prenom);
@@ -118,11 +115,8 @@ if (isset($_SESSION['prenomnom'])) {
         }
     }
 
-
     ?>
-
-
-    <script type="text/javascript" src="js/monscript.js"></script>
+    <script src="js/monscript.js"></script>
 </body>
 
 </html>

@@ -1,5 +1,6 @@
 <?php session_start(); ?>
-<html>
+<!DOCTYPE html>
+<html lang="fr">
 
 <head>
     <meta charset="utf-8">
@@ -8,7 +9,7 @@
     <title>Commentaire acteurs</title>
     <link rel="stylesheet" href="css/style.css">
     <!--Favicon-->
-    <link rel="icon" type="image" href="images/favicon-gbaf.png" />
+    <link rel="icon"   href="images/favicon-gbaf.png" />
 
 
 </head>
@@ -45,8 +46,8 @@ if (empty($_SESSION['prenomnom'])) {
         </h1>
 
         <div>
-            <label for="commentaire">Commentaire sur ce partenaire : </label>
-            <input id="commentaire" type="text" name="commentaire" required="true" placeholder="Commentaire">
+            <label>Commentaire sur ce partenaire : </label>
+            <input id="commentaire" type="text" name="commentaire" required placeholder="Commentaire">
             <span id="commentaire_erreur"></span>
         </div>
 
@@ -103,7 +104,7 @@ if (empty($_SESSION['prenomnom'])) {
     ?>
 
     <?php require "_footer.php" ?>
-    <script type="text/javascript" src="js/monscript.js"></script>
+    <script  src="js/monscript.js"></script>
 </body>
 
 </html>
